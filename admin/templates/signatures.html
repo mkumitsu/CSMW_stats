@@ -1,0 +1,144 @@
+<script type="text/javascript" charset="utf-8">
+	(function($) {
+		$(document).ready(function(){
+			var options = {
+				phrase:    '%saving% ...',
+				sid:       '$sid'
+			}
+			
+			$('#activate :input, #update :input').on("keyup change", function(e) {
+				$.settings($(this), options);
+			});
+			
+			$('#edit :input').on("keyup change", function(e) {
+				$.signatures_edit($(this), options);
+			});
+			
+			$('#reset').on("click", function(e) {
+				e.preventDefault();
+				var link = $(this);
+				
+				link
+					.addClass("delete")
+					.text(link.attr("delphrase"))
+					.on("click", function() {
+						$.signatures_reset(options);
+					});
+				
+			});
+			
+			$('#update .button').click(function(e) {
+				e.preventDefault();
+				$.signatures_update(options);
+			});
+		});
+	})(jQuery);
+</script>
+
+<section id="activate">
+	<h1>%signatures_activate%</h1>
+	<div>
+		<form>
+			<fieldset>
+				<ul>
+					<li>
+						<label for="functions_signatures">%signatures_activate%:</label>
+						<input type="radio" name="functions_signatures" id="functions_signatures_1" value="1" /> %activated% 
+						<input type="radio" name="functions_signatures" id="functions_signatures_0" value="0" /> %deactivated% 
+						<legend>%signatures_settings_desc%</legend>
+					</li>
+				</ul>
+			</fieldset>
+		</form>
+	</div>
+</section>
+
+
+<section id="update">
+	<h1>%signatures_update%</h1>
+	
+	<div class="lcol">
+		<h2>%info%</h2>
+		<p>
+			%update_help_sig_1% 
+			<span class="info"></span>
+			<x-tooltip trigger-style="hover" style="width: 500px">
+				%update_help_sig_1% %update_help_sig_2% <br/>
+				<a href="signatures.php" target="_blank">%update_help_3%</a><br/><br/>
+				%update_help_7% <br/>
+				<a href="$url_wiki" target="_blank">Stats Update</a>
+			</x-tooltip>
+		</p>
+		<table class="noborder">
+			<tbody>
+				<tr>
+					<td><input class="fleft" type="text" size="3" name="update_sigs_per_update" id="update_sigs_per_update" value="$preset[update_sigs_per_update]" /></td>
+					<td>%signatures_updatecount%</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="rcol">
+		<h2>%manual_update%</h2>
+		<p style="padding-top: 10px"><a href="update_signatures" class="button">%signatures_update_now%</a></p>
+		<p>%lastupdate%: <span id="lastcheckall">$sig_lastupdate</span></p>
+	</div>
+	
+	<div class="clear"></div>
+</section>
+
+
+<article id="edit" style="width: 660px; min-height: 0;">
+	<h1>&nbsp;</h1>
+	<div>
+		<h2>%signatures_type% Max</h2>
+		<ul id="max"></ul>
+		<div>&nbsp;</div>
+		
+		<h2>%signatures_type% Med</h2>
+		<ul id="med"></ul>
+		<div>&nbsp;</div>
+		
+		<h2>%signatures_type% Min</h2>
+		<ul id="min"></ul>
+		<div>&nbsp;</div>
+		
+		<h2>%signatures_type% X01</h2>
+		<ul id="x01"></ul>
+		<div>&nbsp;</div>
+	</div>
+</article>
+
+
+<article style="width: 300px; margin: 0 0 40px 0; min-height: 0;">
+	<h1>%signatures_modify%</h1>
+	<div>
+		<p>%signatures_text1%</p>
+		<p>%style_text3% (<a href="$url_tickets">ezStats Support</a>)</p>
+	</div>
+</article>
+
+
+<article style="width: 300px; min-height: 0;">
+	<h1>%reset%</h1>
+	<div>
+		<ul>
+			<li>%style_text4%</li>
+			<li>&nbsp;</li>
+			<li><a class="button" defphrase="%reset%" delphrase="%reset%?" id="reset" action="reset" href="#">%reset%</a></li>
+		</ul>
+	</div>
+</article>
+
+
+<div class="clear"></div>
+
+
+<div id="updatenotes">
+	<div id="loader">
+		<div class="bigloader"></div>
+		<p>&nbsp;</p><p>$message</p>
+	</div>
+	<div id="result"></div>
+</div>

@@ -1,0 +1,130 @@
+/* ==========================================================================
+   ezStats common classes
+   ========================================================================== */
+
+/* Tooltip */
+x-tooltip {
+	font-family: $font_family !important;
+	text-align: left !important;
+	font-weight: normal !important;
+	color: $color_dark !important;
+	border: 1px solid $color_grey !important;
+	font-size: $font_size !important;
+	background-color: $color_bright !important;
+	border-radius: $section_border_radius !important;
+	box-shadow: $section_box_shadow !important;
+	line-height: 1.4em !important;
+}
+x-tooltip h3{
+	background-color: $color_rgba_dark;
+	color: $color_bright !important;
+	font-family: $font_family_h2 !important;
+	font-size: 1em !important;
+	font-weight: normal;
+	border-bottom: 1px solid $color_colored;
+	padding: 0px 10px;
+	margin: 1em 0 2px 0;
+}
+x-tooltip h3:first-of-type {
+	margin-top: 0 !important;
+}
+x-tooltip a{
+	padding: 1px 10px !important;
+	background-color: $color_rgba_dark !important;
+	background-image: none !important;
+	color: $color_bright !important;
+	border-radius: 2px !important;
+	margin: 0 !important;
+}
+x-tooltip a:hover{
+	color: $color_bright !important;
+	background-color: $color_colored !important;
+	text-decoration: none !important;
+	margin: 0 !important;
+}
+x-tooltip p{
+	padding: 2px 5px;
+}
+x-tooltip p:last-of-type {
+	padding-bottom: 5px !important;
+}
+x-tooltip td {
+	border: none !important;
+	color: $color_dark !important;
+}
+x-tooltip tr > td:nth-child(odd) {
+	text-align: left !important;
+}
+x-tooltip dl, x-tooltip dt, x-tooltip dd {
+	color: $color_dark !important;
+}
+
+/* Progress-Bar */
+.rankbar { 
+	padding: 2px; 
+	background-color: $color_rgba_bright; 
+	position: relative; 
+	overflow: hidden;
+}
+.rankline { 
+	background-color: $color_colored; 
+} 
+.rankbar > span {
+	color: $color_dark;
+	height: 2em;
+	line-height: 2em;
+	position: absolute;
+	text-align: center;
+	top: 2px;
+	width: 100%;
+}
+
+
+
+/* ==========================================================================
+   ezStats helper classes
+   ========================================================================== */
+
+pre			{ background-color: white; }
+.hidden 		{ display: none; width: auto !important;}
+.tleft 		{ text-align: left !important; }
+.tright 		{ text-align: right !important; }
+.tcenter 	{ text-align: center !important; }
+.tcenter  div { margin: 0 auto; }
+.fleft 		{ float: left; }
+.hover		{ background-color: $color_rgba_grey; }
+.lcol,.rcol	{ margin-bottom: -32767px !important; padding-bottom: 32767px !important; }
+.lcol		{ float: left; }
+.rcol		{ float: right; }
+.clear		{ clear: both !important; }
+.positive	{ color: DarkGreen !important; }
+.negative	{ color: FireBrick !important; }
+.uppercase	{ text-transform: uppercase !important; }
+.capitalize	{ text-transform: capitalize !important; }
+.noborder td 	{ border: none !important; }
+.wrap		{ white-space: normal !important; }
+.nowrap		{ white-space: nowrap !important; }
+
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+/* Remove the gap between images and the bottom of their containers: h5bp.com/i/440 */
+img 		{ vertical-align: middle; }
+
+/* Remove default fieldset styles. */
+fieldset 	{ border: 0; margin: 0; padding: 0; }
+
+/* Allow only vertical resizing of textareas. */
+textarea 	{ resize: vertical; }
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}

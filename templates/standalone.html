@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>	  <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>		 <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>		 <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="author" content="ezzemm" />
+		<meta name="Description" content="This is the ezStats leaderboard for $preset[default_gamename] of $preset[settings_clanname]." />
+		<meta name="Keywords" content="leaderboard, $preset[default_gamename], $preset[settings_clanname]" />
+		
+		<title>Statystyki graczy %for% $preset[default_gamename] - $preset[settings_clanname]</title>
+		
+		<link rel="shortcut icon" href="favicon.ico" />
+		
+		<!-- Loading of stylesheets -->
+		<link rel="stylesheet" href="styles/normalize.css" />
+		<link rel="stylesheet" href="styles/fonts.css" />
+		<link rel="stylesheet" href="styles/_style.php?files=main,standalone,detail" />
+		<link rel="stylesheet" href="styles/tooltipp.css" />
+		<link rel="stylesheet" href="styles/magnific-popup.css" />
+		
+		<!-- Loading of JS scripts -->
+		<script src="scripts/vendor/modernizr-2.6.2.min.js"></script>
+		<script src="scripts/vendor/jquery-1.11.0.min.js"></script>
+		<!--<script src="scripts/vendor/jquery-migrate-1.2.1.js"></script>-->
+		<script src="scripts/vendor/jquery.tablesorter.js"></script>
+		<script src="scripts/vendor/jquery.magnific-popup.min.js"></script>
+		<script src="scripts/vendor/brick-0.9.1.min.js"></script>
+		<script src="scripts/main.js"></script>
+		<script src="scripts/overview.js"></script>
+		
+		<!-- Start of JS scripts -->
+		<script type="text/javascript" charset="utf-8">
+			jQuery.noConflict();
+			
+			(function($) {
+				$(document).ready(function(){
+					var ezstats = $("#ezStats");
+					var elements = $("#ezHeader, #ezStats, #ezAside");
+					
+					// Initialize Lightbox
+					$('.ezPopup').magnificPopup({
+						type:'ajax',
+						closeOnContentClick: false,
+						closeOnBgClick: false,
+						callbacks: {
+							open:  function() { elements.hide(); },
+							close: function() { elements.show(); }
+						}
+					});
+					
+					// Initialize Tablesorter
+					$('#ezOverview', ezstats).tablesorter({
+						sortList: $sortList,
+						textExtraction: function(node) { return node.getAttribute("sort") }
+					});
+					
+					// Initialize further scripts
+					$.tableHover();
+					$.asideHover();
+					ezstats.grow();
+				});
+			})(jQuery);
+		</script>
+	</head>
+	<body>
+		<header id="ezHeader">
+			<hgroup class="wrap" onclick="window.location.href='$preset[settings_clanpage]'">
+			 <img style="position: absolute; left:-20px;" src="styles/images/VETO_icon.png" width="100px" height="100px"  />
+				<h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$preset[settings_clanname]</h1>
+				<br>
+				<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Statystyki graczy World of Warships (PVP)</h2>
+			</hgroup>
+		</header>
+		
+		
+		<div id="ezStats" class="wrap">
+			<section>
+				$selfadd
+				<h1>%Leaderboard%</h1>
+				<div><table id="ezOverview" class="sort"></table></div>
+			</section>
+			
+			<footer id="ezBrand"><a href="http://www.ezstats.org">ezStats v$preset[properties_version]</a></footer>
+		</div>
+		
+		<br/><br/><br/><br/>
+		
+		<aside id="ezAside" pos="right">
+			<h1>%info%</h1>
+			<ul>
+				<li><b>$preset[settings_clanname]</b></li>
+				<li>%Homepage%: <a href="$preset[settings_clanpage]">$preset[settings_clanpage]</a></li>
+				<li>&nbsp;</li>
+				<li>Forum: <a href="http://forum.key-jankee.pl">http://forum.key-jankee.pl</a></li>
+				<li>&nbsp;</li>
+				<li><b>Automatyczna aktualizacja co godzina</b></li>
+				<li>&nbsp;</li>
+				<li>%Lastupdate%: $lastupdate</li>
+				<li>$preset[update_player_per_update] %updated%</li>
+				<li><a href="admin/update.php">%update_now%</a></li>
+				<li>&nbsp;</li>
+				<li>%Hits%: $preset[functions_hits]</li>
+				<li><a href="admin/index.php" target="_blank">%open_adminpanel%</a></li>
+				<li>&nbsp;</li>
+				<li>%poweredby% <a href="http://www.wargaming.com">Wargaming</a></li>
+				<li>&nbsp;</li>
+				<li>Zmodyfikowano przez <b>Kumitsu</b></li>
+			</ul>
+		</aside>
+	</body>
+</html>

@@ -1,0 +1,316 @@
+/* ==========================================================================
+   BODY, HEADER
+   ========================================================================== */
+
+/* Body */
+body, input, textarea { 
+	color: $color_bright;
+	font-family: $font_family, Tahoma, Gulim;
+	font-size: $font_size;
+	line-height: 1.4em;
+}
+body { 
+	background: url("$body_bg_image") no-repeat fixed center top black;
+}
+.wrap {
+	margin: 0 auto;
+	width: $body_width;
+	position: relative;
+}
+a {
+	text-decoration: none;
+	color: $color_colored;
+}
+a:hover {
+	color: $color_bright;
+}
+
+/* Header */
+header {
+	background-color: $color_rgba_dark;
+	border-bottom: 1px solid $color_colored;
+	height: $header_height;
+	margin: $header_margin;
+	background-image: url($header_background_image);
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: center center;
+	§header_custom_css
+}
+header hgroup{
+	cursor: pointer;
+	padding-top: $header_hgroup_top;
+	padding-left: $header_hgroup_left;
+}
+hgroup h1 {
+	color: $color_bright;
+	font-family: $font_family_h1;
+	font-size: 2.4em;
+	font-weight: normal;
+	padding: 45px 0 0 30px;
+	text-shadow: none;
+	text-transform: none;
+}
+
+
+/* ==========================================================================
+   LEADERBOARD
+   ========================================================================== */
+
+/* Leaderboard Section */
+#ezStats section {
+	position: relative;
+	margin: 0 0 40px 0;
+	background-color: $color_rgba_dark;
+	overflow: hidden;
+	?border-radius: $section_border_radius;
+	?box-shadow: $section_box_shadow, $section_box_shadow_inset;
+}
+#ezStats section > div {
+	margin: 20px;
+}
+#ezStats section > h1 { 
+	background-color: $color_rgba_dark;
+	color: $color_bright;
+	font-family: $font_family_h2;
+	font-size: 1.2em;
+	font-weight: normal;
+	border-bottom: 1px solid $color_colored;
+	padding: 10px 20px;
+	?border-radius: $section_border_radius;
+}
+
+/* Leaderboard Table */
+#ezStats section table { 
+	border: 0 none; 
+	border-spacing: 0; 
+	width: 100%; 
+	text-align: left; 
+}
+#ezStats section tr, #ezStats section td { 
+	border: 0 none;
+}
+#ezStats section thead tr th { 
+	font-family: $font_family_h2;
+	font-weight: normal;
+	height: 25px; 
+	vertical-align: middle; 
+	border-top: 1px solid $color_grey;
+	border-bottom: 1px solid $color_colored; 
+	border-spacing: 0;
+	cursor: pointer;
+	padding: $overview_cell_padding; 
+}
+#ezStats section tbody td { 
+	border-bottom: 1px solid; 
+	border-spacing: 0; 
+	border-color: $color_grey;
+	padding: $overview_cell_padding; 
+	vertical-align: middle; 
+	white-space: nowrap;
+	text-align: right;
+	cursor: default;
+}
+#ezStats section tfoot tr td { 
+	border-top: 1px solid; 
+	border-bottom: 1px solid; 
+	border-color: $color_grey;
+	border-spacing: 0; 
+	background-color: $color_rgba_grey;
+	padding: $overview_cell_padding; 
+	white-space: nowrap;
+	text-align: right;
+	cursor: default;
+}
+#ezStats section thead tr .header { 
+	background-color: $color_rgba_grey;
+	background-image: url($overview_gfx_thead_bg);
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: center right;
+}
+#ezStats section thead tr .header:after {
+	content: "\00A0\00A0\00A0";
+}
+#ezStats section thead tr .headerSortUp { 
+	background-color: $color_rgba_colored;
+	background-image: url($overview_gfx_thead_asc);
+	color: $color_bright;
+}
+#ezStats section thead tr .headerSortDown { 
+	background-color: $color_rgba_colored;
+	background-image: url($overview_gfx_thead_desc);
+	color: $color_bright;
+}
+
+/* Top 50 List */
+#ezTop h3 { 
+	background-color: $color_rgba_grey;
+	font-family: $font_family_h2;
+	font-weight: normal;
+	height: 25px; 
+	vertical-align: middle; 
+	border-bottom: 1px solid $color_colored; 
+	border-spacing: 0;
+	padding: $overview_cell_padding;
+	text-align: left;
+}
+#ezTop  > tbody > tr > td  {
+	border: none;
+	padding-bottom: 2em;
+}
+#ezTop  > tbody > tr > td > table > tbody > tr > td {
+	text-align: left;
+}
+#ezTop  > tbody > tr > td > table > tbody > tr > td:first-of-type{
+	text-align: center;
+	font-size: 0.8em;
+}
+#ezTop  > tbody > tr > td > table > tbody > tr > td:last-of-type{
+	text-align: right;
+}
+
+/* ==========================================================================
+   FURTHER ELEMENTS
+   ========================================================================== */
+
+ /* Brand */
+#ezBrand {
+	padding: 5px 20px;
+	margin: 0 0 40px 0;
+	position: absolute;
+	right: 0;
+	font-size: 0.8em;
+	background-color: $color_rgba_dark;
+	?border-radius: $section_border_radius;
+	?box-shadow: $section_box_shadow;
+}
+
+/* Compare-Function */
+#ezCompare {
+	display: none;
+	position: fixed;
+	width: 260px;
+	top: 140px;
+	background-color: $color_rgba_dark;
+	?border-radius: $section_border_radius;
+	?box-shadow: $section_box_shadow;
+	border-right: 5px solid $color_colored;
+}
+#ezCompare > h1 { 
+	background-color: $color_rgba_dark;
+	color: $color_bright;
+	font-family: $font_family_h2;
+	font-size: 1.2em;
+	font-weight: normal;
+	border-bottom: 1px solid $color_colored;
+	padding: 10px 20px;
+	?border-radius: $section_border_radius;
+}
+#ezCompare > ul {
+	/*padding: 10px 20px;*/
+	font-size: 0.9em;
+	/*line-height: 1.4em;*/
+}
+ul.ezDropdown, ul.ezDropdown li, ul.ezDropdown ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+ul.ezDropdown {
+	float: left;
+	/*height: 168px;*/
+	background-color: $color_rgba_dark;
+}
+ul.ezDropdown li.hover, ul.ezDropdown li:hover {
+	position: relative;
+	z-index: 599;
+	cursor: default;
+}
+ul.ezDropdown ul {
+	visibility: hidden;
+	position: absolute;
+	z-index: 598;
+	top: 0px;
+	left: 100%;
+	background-color: $color_rgba_dark;
+}
+ul.ezDropdown ul li {
+	float: none;
+}
+ul.ezDropdown ul ul {
+	top: 0px;
+	left: 100%;
+}
+ul.ezDropdown li:hover > ul {
+	visibility: visible;
+}
+ul.ezDropdown li {
+	color: $color_bright;
+	padding: 2px 20px;
+	white-space: nowrap;
+}
+ul.ezDropdown li a{
+	color: $color_bright !important;
+}
+ul.ezDropdown li.hover, ul.ezDropdown li:hover {
+	background-color: $color_rgba_colored;
+}
+
+/* Info-Screen */
+#ezAside {
+	display: none;
+	position: fixed;
+	width: 260px;
+	top: 140px;
+	background-color: $color_rgba_dark;
+	?border-radius: $section_border_radius;
+	?box-shadow: $section_box_shadow;
+	border-left: 5px solid $color_colored;
+}
+#ezAside > h1 { 
+	background-color: $color_rgba_dark;
+	color: $color_bright;
+	font-family: $font_family_h2;
+	font-size: 1.2em;
+	font-weight: normal;
+	border-bottom: 1px solid $color_colored;
+	padding: 10px 20px;
+	?border-radius: $section_border_radius;
+}
+#ezAside > ul {
+	padding: 10px 20px;
+	font-size: 0.8em;
+	line-height: 1.4em;
+}
+
+/* Self-Add */
+#ezSelfadd {
+	font-family: $font_family_h2;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	padding: 2px 15px;
+	color: $color_bright;
+	background-color: $color_colored2;
+	?border-radius: 0 0 0 3px;
+}
+#ezSelfadd:hover {
+	color: $color_dark;
+	background-color: $color_bright;
+}
+
+#PozycjaStatusSerwera{
+	position: absolute;
+	left:68%;
+	right:0%;
+	top:6%;
+	
+}
+
+#PozycjaGraczyObecnie{
+	position: absolute;
+	left:68%;
+	right:0%;
+	top:8%;
+}

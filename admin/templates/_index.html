@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>	  <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>		 <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>		 <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="author" content="ezzemm" />
+		
+		<title>ezStats 3 %for% $preset[default_gamename] - %administration%</title>
+		
+		<link rel="shortcut icon" href="../favicon.ico" />
+		<link rel="stylesheet" href="styles/normalize.css" />
+		<link rel="stylesheet" href="styles/main.css" />
+		<link rel="stylesheet" href="styles/style.php?files=content,form" />
+		<link rel="stylesheet" href="../styles/fonts.css" />
+		<link rel="stylesheet" href="../styles/tooltipp.css" />
+		<!--[if IE 7]><link rel="stylesheet" href="styles/ie7.css" /><![endif]-->
+		
+		<!-- Loading of JS scripts -->
+		<script src="../scripts/vendor/modernizr-2.6.2.min.js"></script>
+		<script src="../scripts/vendor/jquery-1.11.0.min.js"></script>
+		<!--<script src="../scripts/vendor/jquery-migrate-1.2.1.js"></script>-->
+		<script src="../scripts/vendor/brick-0.9.1.min.js"></script>
+		<script src="../scripts/vendor/jquery-ui-1.10.3.min.js"></script>
+		<script src="../scripts/vendor/jquery.prettyLoader.js"></script>
+		<script src="../scripts/main.js"></script>
+		<script src="../scripts/admin.js"></script>
+		
+		<!-- Start of JS scripts -->
+		<script type="text/javascript" charset="utf-8">
+			jQuery.noConflict();
+			
+			(function($) {
+				$(document).ready(function(){
+					$.prettyLoader({loader: "styles/images/ajax-loader.gif"});
+				});
+			})(jQuery);
+		</script>
+	</head>
+	<body>
+		<header>
+			<hgroup class="wrap">
+				<h1>%administration%:</h1>
+				<h2>$headline</h2>
+			</hgroup>
+			<nav class="wrap">
+				<ul>
+					<li id="player"     style="position: relative"><a href="index.php?player&amp;sid=$sid">%nav_player%</a></li>
+					<li id="settings"   class="admin"><a href="index.php?settings&amp;sid=$sid">%nav_settings%</a></li>
+					<li id="custom"     class="admin"><a href="index.php?custom&amp;sid=$sid">%nav_customize%</a></li>
+					<li id="plugin"     class="admin"><a href="index.php?plugin&amp;sid=$sid">%nav_plugin%</a></li>
+					<li id="style"      class="admin"><a href="index.php?style&amp;sid=$sid">%nav_style%</a></li>
+					<li id="user"       class="admin"><a href="index.php?user&amp;sid=$sid">%nav_user%</a></li>
+					<!--<li id="signatures" class="admin"><a href="index.php?signatures&amp;sid=$sid">%nav_signatures%</a></li>-->
+				</ul>
+			</nav>
+		</header>
+		<div id="wrap" class="wrap"></div>
+		<aside></aside>
+		<footer><a href="../index.php">%go_to_leaderboard%</a></footer>
+	</body>
+</html>

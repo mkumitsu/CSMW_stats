@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>	  <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>		 <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>		 <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="author" content="ezzemm" />
+		<meta name="Description" content="This is the ezStats leaderboard for $preset[default_gamename] of $preset[settings_clanname]. For more informations visit www.ezStats.org" />
+		<meta name="Keywords" content="ezstats, ezzemm, leaderboard, $preset[default_gamename], $preset[settings_clanname]" />
+		
+		<title>ezStats 3 %for% $preset[default_gamename] - $preset[settings_clanname]</title>
+		
+		<link rel="shortcut icon" href="favicon.ico" />
+		
+		<!-- Loading of stylesheets -->
+		<link rel="stylesheet" href="styles/normalize.css" />
+		<link rel="stylesheet" href="styles/fonts.css" />
+		<link rel="stylesheet" href="styles/_style.php?files=main,standalone,detail" />
+		<link rel="stylesheet" href="styles/tooltipp.css" />
+		<link rel="stylesheet" href="styles/magnific-popup.css" />
+		
+		<!-- Loading of JS scripts -->
+		<script src="scripts/vendor/modernizr-2.6.2.min.js"></script>
+		<script src="scripts/vendor/jquery-1.11.0.min.js"></script>
+		<script src="scripts/main.js"></script>
+		<script src="scripts/overview.js"></script>
+		
+		<!-- Start of JS scripts -->
+		<script type="text/javascript" charset="utf-8">
+			jQuery.noConflict();
+			
+			(function($) {
+				$(document).ready(function(){
+					
+				});
+			})(jQuery);
+		</script>
+	</head>
+	<body>
+		<header id="ezHeader">
+			<hgroup class="wrap" onclick="window.location.href='$preset[settings_clanpage]'">
+				<h1>$preset[settings_clanname]</h1>
+			</hgroup>
+		</header>
+		
+		
+		<div id="ezStats" class="wrap">
+			<section>
+				<h1>Top $limit %Leaderboard%</h1>
+				<div>
+					<table id="ezTop">
+						<tr>
+							<td><h3>Kills</h3><table>$kills</table></td>
+							<td><h3>Ground Targets</h3><table>$ground_targets</table></td>
+							<td><h3>Accuracy</h3><table>$accuracy</table></td>
+						</tr>
+						<tr>
+							<td><h3>Kills per Battle</h3><table>$kills_per_battle</table></td>
+							<td><h3>Damage per Battle</h3><table>$damage_per_battle</table></td>
+							<td><h3>Win-Loss-Ratio</h3><table>$wlr</table></td>
+						</tr>
+						<tr>
+							<td><h3>Experience</h3><table>$experience_wo_bonus</table></td>
+							<td><h3>Experience with Bonus</h3><table>$experience_w_bonus</table></td>
+							<td><h3>Experience per Battle</h3><table>$xp_per_battle</table></td>
+						</tr>
+					</table>
+				</div>
+			</section>
+			
+			<footer id="ezBrand"><a href="http://www.ezstats.org">ezStats v$preset[properties_version]</a></footer>
+		</div>
+	</body>
+</html>

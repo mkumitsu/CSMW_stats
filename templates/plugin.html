@@ -1,0 +1,80 @@
+<!-- Loading of stylesheets -->
+<link rel="stylesheet" href="#PATH#styles/fonts.css" />
+<link rel="stylesheet" href="#PATH#styles/_style.php?files=main,plugin,detail" />
+<link rel="stylesheet" href="#PATH#styles/tooltipp.css" />
+<link rel="stylesheet" href="#PATH#styles/magnific-popup.css" />
+
+<!-- Loading of JS scripts -->
+<!--<script src="#PATH#scripts/vendor/modernizr-2.6.2.min.js"></script>-->
+<!--<script src="#PATH#scripts/vendor/jquery-migrate-1.2.1.js"></script>-->
+<script src="#PATH#scripts/vendor/jquery-1.11.0.min.js"></script>
+<script src="#PATH#scripts/vendor/jquery.tablesorter.js"></script>
+<script src="#PATH#scripts/vendor/jquery.magnific-popup.min.js"></script>
+<script src="#PATH#scripts/vendor/brick-0.9.1.min.js"></script>
+<script src="#PATH#scripts/main.js"></script>
+<script src="#PATH#scripts/overview.js"></script>
+
+<!-- Start of JS scripts -->
+<script type="text/javascript" charset="utf-8">
+	jQuery.noConflict();
+	
+	(function($) {
+		$(document).ready(function(){
+			var ezstats = $("#ezStats");
+			
+			// Initialize Lightbox
+			$('.ezPopup').magnificPopup({
+				type:'ajax',
+				closeOnContentClick: false,
+				closeOnBgClick: false,
+				callbacks: {}
+			});
+			
+			// Initialize Tablesorter
+			$('#ezOverview', ezstats).tablesorter({
+				sortList: $sortList,
+				textExtraction: function(node) { return node.getAttribute("sort") }
+			});
+			
+			// Aside-Slider
+			$(".showme").click(function() { showme = $(this);
+				if   (showme.children().hasClass("asc")) { showme.children().removeClass("asc"); showme.prev().slideDown(); } 
+				else { showme.children().addClass("asc"); showme.prev().slideUp(); }
+			});
+			
+			// Initialize further scripts
+			$.tableHover();
+		});
+	})(jQuery);
+</script>
+
+<div id="ezStats">
+	<table id="ezOverview" class="sort"></table>
+	
+	<table>
+		<tr>
+			<td id="ezAside">
+				<ul>
+				<li><b>$preset[settings_clanname]</b></li>
+				<li>%Homepage%: <a href="$preset[settings_clanpage]">$preset[settings_clanpage]</a></li>
+				<li>&nbsp;</li>
+				<li>Forum: <a href="http://forum.vetogaming.pl">http://forum.vetogaming.pl</a></li>
+				<li>&nbsp;</li>
+				<li>%Lastupdate%: $lastupdate</li>
+				<li>$preset[update_player_per_update] %updated%</li>
+				<li><a href="admin/update.php">%update_now%</a></li>
+				<li>&nbsp;</li>
+				<li>%Hits%: $preset[functions_hits]</li>
+				<li><a href="admin/index.php" target="_blank">%open_adminpanel%</a></li>
+				<li>&nbsp;</li>
+				<li>%poweredby% <a href="http://www.wargaming.com">Wargaming</a></li>
+				<li>&nbsp;</li>
+				<li>Zmodyfikowano przez <b>Kumitsu</b></li>
+				</ul>
+				<div class="showme"><div class="asc"></div></div>
+			</td>
+			
+			
+		</tr>
+	</table>
+</div>

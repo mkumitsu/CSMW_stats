@@ -1,0 +1,42 @@
+<script type="text/javascript" charset="utf-8">
+	(function($) {
+		$(document).ready(function(){
+			var options = {
+				phrase: '%saving% ...',
+				sid:    '$sid'
+			}
+			
+			$('#addplayer .button').click(function(e) {
+				e.preventDefault();
+				$.player_add(options);
+			});
+			
+			$('#name').keypress(function(e) {
+				if (e.which == 13) $.player_add(options);
+			});
+		});
+	})(jQuery);
+</script>
+
+<section id="addplayer">
+	<h1>%add_player%</h1>
+	<div>
+		<table class="noborder">
+			<tbody>
+				<tr>
+					<td>
+						<select name="region" id="region">
+							<option id="region_eu"   value="eu">Europe</option>
+							<option id="region_na"   value="na">North America</option>
+							<option id="region_ru"   value="ru">Russia</option>
+							<option id="region_asia" value="asia">Asia</option>
+						</select>
+					</td>
+					<td class="center"><input type="text" name="name" id="name" size="80" placeholder="%enter_player_here%" value="" /></td>
+					<td class="center"><input type="text" name="clanname" id="clanname" size="20" placeholder="%settings_clanname%" value="" /></td>
+					<td class="tright"><a href="add_player" class="button">%add_player%</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</section>

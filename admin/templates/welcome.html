@@ -1,0 +1,33 @@
+<script type="text/javascript" charset="utf-8">
+	(function($) {
+		$(document).ready(function(){
+			$('#welcome').click(function(e) {
+				window.location.href='index.php?player&sid=$sid'
+			});
+		});
+	})(jQuery);
+</script>
+
+<style>
+	#logo_wrap { 
+		background: url("../styles/wallpaper/wallpaper1.jpg") no-repeat fixed center top black;
+	}
+	#logo { 
+		background: url("styles/images/ezstats.png") no-repeat center top transparent;
+		width: 300px;
+		height: 300px;
+		display: block;
+		cursor: pointer;
+	}
+	#welcome {
+		width: 340px;
+		margin: 200px auto;
+	}
+</style>
+
+<section id="welcome">
+	<h1>%administration%</h1>
+	<div>
+		<div id="logo_wrap"><div id="logo"></div></div>
+	</div>
+</section>

@@ -1,0 +1,274 @@
+<script type="text/javascript" charset="utf-8">
+	(function($) {
+		$(document).ready(function(){
+			var options = {
+				phrase:   '%saving% ...',
+				sid:      '$sid'
+			}
+			
+			
+			// Navigation
+			$('#modes a').on('click', function(e) {
+				e.preventDefault();
+				$('#modes ul').hide();
+				$(this).next("ul").fadeIn();
+			});
+			
+			
+			// Save changes
+			$('#modes select').on("change", function(e) {
+				var elem = $(this);
+				var next = elem.nextAll("input");
+				
+				next.val(elem.val());
+				
+				$.styles({
+					name:  next.attr("name"),
+					value: next.val()
+				}, options);
+				
+				elem.val("...");
+			});
+			
+			$('#modes input, #modes textarea').bind("keyup change", function(e) {
+				$.styles({
+					name:  $(this).attr("name"),
+					value: $(this).val()
+				}, options);
+			});
+			
+			
+			
+			// Reset and Preset Button
+			$('#reset, #preset').on("click", function(e) {
+				e.preventDefault();
+				var link = $(this);
+				
+				link
+					.addClass("delete")
+					.text(link.attr("delphrase"))
+					.on("click", function() {
+						$.styles({
+							button: link.attr("id"),
+							preset: $('#options_preset').val()
+						}, options);
+					});
+				
+			});
+			
+		});
+	})(jQuery);
+</script>
+
+
+<style>
+	#modes a {
+		display: block;
+		float: right;
+		text-align: right;
+		text-decoration: none;
+		width: 100%;
+	}
+	#modes h2 {
+		display: inline-block;
+		float: left;
+	}
+</style>
+
+
+<article style="width: 500px; min-height: 0;">
+	<h1>%style_headline%</h1>
+	<div>
+		<p>%style_text1%</p>
+		<p>%style_text2%</p>
+		<p>%style_text3% (<a href="$url_support" target="_blank">ezStats Support</a>)</p>
+		<p>&nbsp;</p>
+		
+		<form id="modes">
+			<fieldset>
+				<a href="#"><h2>%standalone_mode%</h2> %open%</a>
+				<ul style="display: none; clear: both;">
+					<li>
+						<label style="width: 180px" for="body_bg_image">Background Image</label>
+						<select id="options_body_bg_image" name="options_body_bg_image" style="margin-bottom: 2px">$options_body_bg_image</select>
+						
+						<label style="width: 180px" for="body_bg_image">&nbsp;</label>
+						<input type="text" size="35" name="body_bg_image" value="$styles[body_bg_image]" />
+						
+						<legend style="margin: 0">%body_bg_image%</legend>
+					</li>
+					<li>
+						<label style="width: 180px" for="header_background_image">URL of Header Image</label>
+						<input type="text" size="35" name="header_background_image" value="$styles[header_background_image]" style="margin-bottom: 2px" />
+						
+						<label style="width: 180px" for="header_height">Header Height</label>
+						<input type="text" size="35" name="header_height" value="$styles[header_height]" style="margin-bottom: 2px" />
+						
+						<label style="width: 180px" for="header_margin">Header Margins</label>
+						<input type="text" size="35" name="header_margin" value="$styles[header_margin]" style="margin-bottom: 2px" />
+						
+						<label style="width: 240px" for="header_hgroup_left">Headlines Position (Left / Top)</label>
+						<input type="text" size="7" name="header_hgroup_left" value="$styles[header_hgroup_left]" style="margin-bottom: 2px" />&nbsp;&nbsp;&nbsp;
+						<input type="text" size="7" name="header_hgroup_top" value="$styles[header_hgroup_top]" style="margin-bottom: 2px" />
+						
+						<label style="width: 180px" for="header_custom_css">Custom CSS Code</label>
+						<textarea name="header_custom_css" cols="61" rows="3">$styles[header_custom_css]</textarea>
+						
+						<legend style="margin: 0">%header_background%</legend>
+					</li>
+					<li>
+						<label style="width: 180px" for="body_width">Body Width</label>
+						<input type="text" size="35" name="body_width" value="$styles[body_width]" />
+						<legend style="margin: 0">%body_width%</legend>
+					</li>
+					<li>
+						<label style="width: 180px" for="section_border_radius">Leaderboard Border Radius</label>
+						<input type="text" size="35" name="section_border_radius" value="$styles[section_border_radius]" />
+						<legend style="margin: 0">%section_border_radius%</legend>
+					</li>
+					<li>
+						<label style="width: 180px" for="section_box_shadow">Shadow outwards</label>
+						<input type="text" size="35" name="section_box_shadow" value="$styles[section_box_shadow]" style="margin-bottom: 2px" />
+						
+						<label style="width: 180px" for="section_box_shadow_inset">Shadow inwards</label>
+						<input type="text" size="35" name="section_box_shadow_inset" value="$styles[section_box_shadow_inset]" />
+						
+						<legend style="margin: 0">%section_box_shadow%</legend>
+					</li>
+					<li>
+						<label style="width: 180px" for="font_family">Font Family</label>
+						<input type="text" size="35" name="font_family" value="$styles[font_family]" style="margin-bottom: 2px" />
+						
+						<label style="width: 180px" for="font_family_h1">Font Family (H1)</label>
+						<input type="text" size="35" name="font_family_h1" value="$styles[font_family_h1]" />
+						
+						<label style="width: 180px" for="font_family_h2">Font Family (H2)</label>
+						<input type="text" size="35" name="font_family_h2" value="$styles[font_family_h2]" />
+						
+						<legend style="margin: 0">%font_family%</legend>
+					</li>
+					<li>
+						<label style="width: 180px" for="font_size">Font Size</label>
+						<input type="text" size="35" name="font_size" value="$styles[font_size]" />
+						<legend style="margin: 0">%font_size%</legend>
+					</li>
+					<li>
+						<label style="width: 180px" for="color_dark">Font Color</label>
+						<input type="text" size="35" name="color_dark" value="$styles[color_dark]" style="margin-bottom: 2px" />
+						
+						<label style="width: 180px" for="color_bright">Font Color (inverted)</label>
+						<input type="text" size="35" name="color_bright" value="$styles[color_bright]" style="margin-bottom: 2px" />
+						
+						<label style="width: 180px" for="color_grey">Font Color (medium)</label>
+						<input type="text" size="35" name="color_grey" value="$styles[color_grey]" style="margin-bottom: 2px" />
+						
+						<label style="width: 180px" for="color_colored">Font Color (color 1)</label>
+						<input type="text" size="35" name="color_colored" value="$styles[color_colored]" style="margin-bottom: 2px" />
+						
+						<label style="width: 180px" for="color_colored2">Font Color (color 2)</label>
+						<input type="text" size="35" name="color_colored2" value="$styles[color_colored2]"/>
+						
+						<legend style="margin: 0">%font_color%</legend>
+					</li>
+				</ul>
+				<br/><br/>
+			</fieldset>
+			
+			
+			<fieldset>
+				<a href="#"><h2>%plugin_mode%</h2> %open%</a>
+				<ul style="display: none; clear: both;">
+					<li>
+						<label style="width: 180px" for="plugin_bg_image">Background Image</label>
+						<input type="text" size="35" name="plugin_bg_image" value="$styles[plugin_bg_image]" />
+						<legend style="margin: 0">%plugin_bg_image%</legend>
+					</li>
+					<li>
+						<label style="width: 180px" for="plugin_font_size">Font Size</label>
+						<input type="text" size="35" name="plugin_font_size" value="$styles[plugin_font_size]" style="margin-bottom: 2px" />
+						
+						<label style="width: 180px" for="plugin_font_color">Font Color</label>
+						<input type="text" size="35" name="plugin_font_color" value="$styles[plugin_font_color]" style="margin-bottom: 2px" />
+						
+						<label style="width: 180px" for="plugin_font_family">Font Family</label>
+						<input type="text" size="35" name="plugin_font_family" value="$styles[plugin_font_family]" style="margin-bottom: 2px" />
+						
+						<label style="width: 180px" for="plugin_font_small">Font Size (small)</label>
+						<input type="text" size="35" name="plugin_font_small" value="$styles[plugin_font_small]" style="margin-bottom: 2px" />
+						
+						<label style="width: 180px" for="plugin_font_color_link">Font Color (Links)</label>
+						<input type="text" size="35" name="plugin_font_color_link" value="$styles[plugin_font_color_link]" style="margin-bottom: 2px" />
+						
+						<label style="width: 180px" for="plugin_link_decoration">Link Decoration</label>
+						<input type="text" size="35" name="plugin_link_decoration" value="$styles[plugin_link_decoration]" style="margin-bottom: 2px" />
+						
+						<label style="width: 180px" for="plugin_line_height">Line Height</label>
+						<input type="text" size="35" name="plugin_line_height" value="$styles[plugin_line_height]"/>
+						
+						<legend style="margin: 0">%plugin_font_size%</legend>
+					</li>
+				</ul>
+				<br/><br/>
+			</fieldset>
+			
+			
+			<fieldset>
+				<a href="#"><h2>%both_modes%</h2> %open%</a>
+				<ul style="display: none; clear: both;">
+					<li>
+						<label style="width: 180px" for="overview_cell_padding">Cell Padding</label>
+						<input type="text" size="50" name="overview_cell_padding" value="$styles[overview_cell_padding]" style="margin-bottom: 2px" />
+						
+						<label style="width: 180px" for="color_rgba_dark">Background Color</label>
+						<input type="text" size="50" name="color_rgba_dark" value="$styles[color_rgba_dark]" style="margin-bottom: 2px" />
+						
+						<label style="width: 180px" for="color_rgba_grey">Background Color (medium)</label>
+						<input type="text" size="50" name="color_rgba_grey" value="$styles[color_rgba_grey]" style="margin-bottom: 2px" />
+						
+						<label style="width: 180px" for="color_rgba_bright">Background Color (inverted)</label>
+						<input type="text" size="50" name="color_rgba_bright" value="$styles[color_rgba_bright]" style="margin-bottom: 2px" />
+						
+						<label style="width: 180px" for="color_rgba_colored">Background Color (colored)</label>
+						<input type="text" size="50" name="color_rgba_colored" value="$styles[color_rgba_colored]" style="margin-bottom: 2px" />
+						
+						<label style="width: 180px" for="overview_gfx_thead_bg">Sorter Image (Both)</label>
+						<input type="text" size="50" name="overview_gfx_thead_bg" value="$styles[overview_gfx_thead_bg]" style="margin-bottom: 2px" />
+						
+						<label style="width: 180px" for="overview_gfx_thead_asc">Sorter Image (ASC)</label>
+						<input type="text" size="50" name="overview_gfx_thead_asc" value="$styles[overview_gfx_thead_asc]" style="margin-bottom: 2px" />
+						
+						<label style="width: 180px" for="overview_gfx_thead_desc">Sorter Image (DESC)</label>
+						<input type="text" size="50" name="overview_gfx_thead_desc" value="$styles[overview_gfx_thead_desc]"/>
+						
+						<legend style="margin: 0">%overview_border_color%</legend>
+					</li>
+				</ul>
+			</fieldset>
+		</form>
+	</div>
+</article>
+
+<article style="width: 300px; margin: 0 0 40px 0; min-height: 0;">
+	<h2>%preset%</h2>
+	<div>
+		<ul>
+			<li>%style_text5%</li>
+			<li>&nbsp;</li>
+			<li><select id="options_preset" name="options_preset" style="margin-bottom: 2px">$options_preset</select></li>
+			<li>&nbsp;</li>
+			<li><a class="button" defphrase="%set%" delphrase="%set%?" id="preset" href="#">%set%</a></li>
+		</ul>
+	</div>
+</article>
+
+<article style="width: 300px; min-height: 0;">
+	<h2>%reset%</h2>
+	<div>
+		<ul>
+			<li>%style_text4%</li>
+			<li>&nbsp;</li>
+			<li><a class="button" defphrase="%reset%" delphrase="%reset%?" id="reset" action="reset" href="#">%reset%</a></li>
+		</ul>
+	</div>
+</article>
+<div class="clear"></div>

@@ -1,0 +1,48 @@
+<script type="text/javascript" charset="utf-8">
+	(function($) {
+		$(document).ready(function(){
+			var options = {
+				phrase:  '%saving% ...',
+				sid:     '$sid'
+			}
+			
+			$.player_load(options);
+		});
+	})(jQuery);
+</script>
+
+<style>
+	#playerlist x-tooltip {
+		max-width: 400px
+	}
+	#playerlist .info {
+		background-position: left center;
+		padding: 0 0 0 21px;
+		width: auto;
+		height: 20px;
+		bottom: -1px;
+	}
+</style>
+
+<section id="playerlist">
+	<h1>%edit_player%</h1>
+	<div>
+		<table class="playerlist">
+			<thead>
+				<tr>
+					<th class="tleft">%account_id%</th>
+					<th class="tleft">%name%</th>
+					<th><span class="info">%nickname%</span><x-tooltip trigger-style="hover">%nickname_info%</x-tooltip></th>
+					<th><span>%settings_clanname%</span></th>
+					<th class="tleft">%settings_region%</th>
+					<th><span class="info">%last_update%</span><x-tooltip trigger-style="hover">%last_update_info%</x-tooltip></th>
+					<th><span class="info">%date_update%</span><x-tooltip trigger-style="hover">%date_update_info%</x-tooltip></th>
+					<th><span class="info">%checkstate%</span><x-tooltip trigger-style="hover">%checkstate_info%</x-tooltip></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+</section>

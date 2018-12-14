@@ -1,0 +1,29 @@
+<script type="text/javascript" charset="utf-8">
+	(function($) {
+		$(document).ready(function(){
+			var options = {
+				DOM:       $('#columns'),
+				phrase:    '%saving% ...',
+				sid:       '$sid'
+			}
+			
+			options.DOM.sortable({
+				placeholder: "placeholder"
+			});
+			
+			options.DOM.on("change sortupdate", function() {
+				$.customize(options);
+			});
+		});
+	})(jQuery);
+</script>
+
+<article>
+	<h1>%custom%</h1>
+	<div><p>%customize_columns_desc%</p></div>
+</article>
+<article>
+	<h1>&nbsp;</h1>
+	<div><ul id="columns" class="sortable"></ul></div>
+</article>
+<div class="clear"></div>

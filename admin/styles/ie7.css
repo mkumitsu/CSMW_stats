@@ -1,0 +1,13 @@
+section {
+	display: block; 
+	background: url("images/bg_box_60.png") repeat scroll 0 0 transparent;
+	height: 99%;
+}
+section .mtop150 {
+	position: absolute;
+	margin: 0;
+	top: 250px;
+}
+.sortable li { 
+	background-color: #DCDCDC;
+}

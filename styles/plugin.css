@@ -1,0 +1,238 @@
+/* Hintergrundbild im Detail-View (Überschreibt Wert in detail.css) */
+.fancybox-outer {
+	background-image: url("$plugin_bg_image") !important;
+}
+
+/* Tabelle */
+#ezStats * {
+	color: $plugin_font_color;
+	font-family: $plugin_font_family;
+	font-size: $plugin_font_size;
+	line-height: $plugin_line_height;
+}
+#ezStats a {
+	text-decoration: $plugin_link_decoration;
+	color: $plugin_font_color_link;
+	font-weight: normal;
+}
+#ezStats table {
+	margin: 0;
+	padding: 0;
+	border: 0 none !important; 
+	border-spacing: 0; 
+	width: 100%; 
+	text-align: left; 
+}
+#ezStats tr, #ezStats td, #ezStats th, #ezStats img { 
+	border: 0 none;
+	text-align: left; 
+}
+#ezOverview thead tr th { 
+	border-top: 1px solid $color_grey;
+	border-bottom: 3px solid $color_colored; 
+	border-spacing: 0;
+	cursor: pointer;
+	padding: $overview_cell_padding; 
+	?border-radius: 0 !important;
+}
+#ezOverview tbody td { 
+	border-bottom: 1px solid; 
+	border-spacing: 0; 
+	border-color: $color_grey;
+	padding: $overview_cell_padding; 
+	vertical-align: middle; 
+	white-space: nowrap;
+	text-align: right;
+	cursor: default;
+}
+#ezOverview tfoot tr td { 
+	border-top: 1px solid; 
+	border-bottom: 1px solid; 
+	border-color: $color_grey;
+	border-spacing: 0; 
+	background-color: $color_rgba_grey;
+	padding: $overview_cell_padding; 
+	white-space: nowrap;
+	text-align: right;
+	cursor: default;
+}
+#ezOverview thead tr .header { 
+	background-color: $color_rgba_grey;
+	background-image: url($overview_gfx_thead_bg);
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: center right;
+	text-decoration: none;
+	color: inherit;
+	font: inherit;
+}
+#ezOverview thead tr .header:after {
+	content: "\00A0\00A0\00A0";
+}
+#ezOverview thead tr .headerSortUp { 
+	background-color: $color_rgba_colored;
+	background-image: url($overview_gfx_thead_asc);
+	color: $plugin_color_bright;
+}
+#ezOverview thead tr .headerSortDown { 
+	background-color: $color_rgba_colored;
+	background-image: url($overview_gfx_thead_desc);
+	color: $plugin_color_bright;
+}
+
+/* Top 50 List */
+#ezTop h3 { 
+	background-color: $color_rgba_grey;
+	font-family: $font_family_h2;
+	font-weight: normal;
+	height: 25px; 
+	vertical-align: middle; 
+	border-bottom: 1px solid $color_colored; 
+	border-spacing: 0;
+	padding: $overview_cell_padding;
+	text-align: left;
+}
+#ezTop  > tbody > tr > td  {
+	border: none;
+	padding-bottom: 2em;
+}
+#ezTop  > tbody > tr > td > table > tbody > tr > td {
+	text-align: left;
+}
+#ezTop  > tbody > tr > td > table > tbody > tr > td:first-of-type{
+	text-align: center;
+	font-size: 0.8em;
+}
+#ezTop  > tbody > tr > td > table > tbody > tr > td:last-of-type{
+	text-align: right;
+}
+
+/* Compare */
+#ezCompare {
+	position: relative;
+	display: inline-block;
+	padding: 0.3em 1.5em 0.3em 0.6em;
+	color: $color_bright;
+	background-color: $color_rgba_dark;
+	?border-radius: 10px 10px 0 0;
+	margin: 0;
+	font-size: 0.9em;
+}
+#ezCompare:hover {
+	background-color: $color_colored;
+}
+#ezCompare span {
+	display: inline-block;
+	padding-left: 3em;
+	font-size: $plugin_font_small;
+	text-transform: uppercase;
+	background-image: url("images/bg_compare.png");
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: 0 center;
+	margin: 0;
+}
+#ezCompare li:before {
+	display: none !important;
+}
+ul.ezDropdown, ul.ezDropdown li, ul.ezDropdown ul {
+	list-style: none;
+	margin: 0 !important;
+	padding: 0 !important;
+	background-image: none;
+	overflow: visible !important;
+}
+ul.ezDropdown {
+	display: none;
+	position: absolute;
+	float: left;
+	left: 0;
+	margin-top: 0.3em !important;
+	z-index: 597;
+	background-color: $color_rgba_dark;
+}
+ul.ezDropdown li.hover, ul.ezDropdown li:hover {
+	position: relative;
+	z-index: 599;
+	cursor: default;
+}
+ul.ezDropdown ul {
+	visibility: hidden;
+	position: absolute;
+	z-index: 598;
+	top: 0px;
+	left: 100%;
+	background-color: $color_rgba_dark;
+}
+ul.ezDropdown ul li {
+	float: none;
+}
+ul.ezDropdown ul ul {
+	top: 0px;
+	left: 100%;
+}
+ul.ezDropdown li:hover > ul {
+	visibility: visible;
+}
+ul.ezDropdown li {
+	color: $color_bright;
+	padding: 5px 20px !important;
+	white-space: nowrap;
+}
+ul.ezDropdown li a{
+	color: $color_bright !important;
+}
+ul.ezDropdown li.hover, ul.ezDropdown li:hover {
+	background-color: $color_colored;
+}
+
+/* Brand & Selfadd*/
+#ezBrand, #ezSelfadd  {
+	padding: 10px 0 0 0;
+	margin: 0;
+	text-align: right !important;
+	font-size: $plugin_font_small !important;
+	vertical-align: top;
+}
+#ezSelfadd {
+	text-align: center !important;
+}
+
+/* Aside */
+#ezAside {
+	padding: 10px 0 0 0;
+	margin: 0;
+	font-size: $plugin_font_small;
+}
+#ezAside ul {
+	margin: 0; padding: 0;
+	list-style: none;
+	display: none;
+}
+#ezAside li {
+	list-style: none;
+	margin: 0; padding: 0;
+	background: none;
+}
+#ezAside li:before {
+	content: "";
+}
+#ezAside .showme {
+	margin: 10px 0 0 0;
+	padding: 0;
+	border-top: 1px solid; 
+	border-color: $color_grey;
+	display: block;
+	cursor: pointer;
+	width: 250px;
+}
+#ezAside .showme div {
+	background: url($overview_gfx_thead_desc) no-repeat scroll center center transparent;
+	display: block;
+	height: 4px;
+	margin: 6px 8px;
+	width: 21px;
+}
+#ezAside .showme div.asc {
+	background: url($overview_gfx_thead_asc) no-repeat scroll center center transparent;
+}

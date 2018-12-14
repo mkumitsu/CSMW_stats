@@ -1,0 +1,131 @@
+<script type="text/javascript" charset="utf-8">
+	(function($) {
+		$(document).ready(function(){
+			var options = {
+				phrase:    '%saving% ...',
+				sid:       '$sid'
+			}
+			
+			$(':input').on("keyup change", function(e) {
+				$.settings($(this), options);
+			});
+		});
+	})(jQuery);
+</script>
+
+<section>
+	<h1>%settings%</h1>
+	<div>
+		<form>
+			<fieldset>
+				<ul>
+					<li>
+						<label for="settings_clanname">%settings_clanname%:</label>
+						<input type="text" size="30" name="settings_clanname" value="$preset[settings_clanname]" />
+						<legend>%settings_clanname_desc%</legend>
+					</li>
+					<li>
+						<label for="settings_clanpage">%settings_clanpage%:</label>
+						<input type="text" size="30" name="settings_clanpage" value="$preset[settings_clanpage]" />
+						<legend>%settings_clanpage_desc%</legend>
+					</li>
+					<li>
+						<label for="settings_clantag">%settings_clantag%:</label>
+						<input type="text" size="10" name="settings_clantag" value="$preset[settings_clantag]" />
+						<legend>%settings_clantag_desc%</legend>
+					</li>
+					<!--<li>
+						<label for="settings_platform">%settings_platform%:</label>
+						<input type="radio" name="settings_platform" id="settings_platform_pc"   value="pc" /> PC 
+						<input type="radio" name="settings_platform" id="settings_platform_ps3"  value="ps3" /> PS3 
+						<input type="radio" name="settings_platform" id="settings_platform_ps4"  value="ps4" /> PS4 
+						<input type="radio" name="settings_platform" id="settings_platform_xbox" value="xbox" /> XBOX 360
+						<input type="radio" name="settings_platform" id="settings_platform_xone" value="xone" /> XBOX ONE
+						<legend>%settings_platform_desc%</legend>
+					</li>-->
+					<li>
+						<label for="settings_region">%settings_region%:</label>
+						<input type="radio" name="settings_region" id="settings_region_eu"   value="eu" /> Europe 
+						<input type="radio" name="settings_region" id="settings_region_na"  value="na" /> North America 
+						<input type="radio" name="settings_region" id="settings_region_ru"  value="ru" /> Russia 
+						<input type="radio" name="settings_region" id="settings_region_asia" value="asia" /> Asia
+						<legend>%settings_region_desc%</legend>
+					</li>
+					<li>
+						<label for="settings_language">%settings_language%:</label>
+						<select name="settings_language" id="settings_language">$settings_language</select>
+						<legend>%settings_language_desc%</legend>
+					</li>
+					<li>
+						<label for="settings_timezone">%settings_timezone%:</label>
+						<select name="settings_timezone" id="settings_timezone">$settings_timezone</select>
+						<legend>%settings_timezone_desc%</legend>
+					</li>
+					<li>
+						<label for="features_selfadd">%settings_selfadd%:</label>
+						<input type="radio" name="features_selfadd" id="features_selfadd_0" value="0" /> %selfadd_only_admin% 
+						<input type="radio" name="features_selfadd" id="features_selfadd_1" value="1" /> %selfadd_with_link%
+						<input type="radio" name="features_selfadd" id="features_selfadd_2" value="2" /> %selfadd_without_link%
+						<legend>%settings_selfadd_desc% (<a href="index.php?selfadd">URL</a>)</legend>
+					</li>
+					<!--<li>
+						<label for="features_rankicon">%settings_rankicon%:</label>
+						<input type="radio" name="features_rankicon" id="features_rankicon_tiny" value="tiny" /> %tiny%
+						<input type="radio" name="features_rankicon" id="features_rankicon_small" value="small" /> %small% 
+						<input type="radio" name="features_rankicon" id="features_rankicon_medium" value="medium" /> %medium%
+						<input type="radio" name="features_rankicon" id="features_rankicon_large" value="large" /> %large%
+						<legend>%settings_rankicon_desc%</legend>
+					</li>-->
+					<li>
+						<label for="features_averages">%settings_ov_averages%:</label>
+						<input type="radio" name="features_averages" id="features_averages_1" value="1" /> %yes% 
+						<input type="radio" name="features_averages" id="features_averages_0" value="0" /> %no% 
+						<legend>%settings_ov_averages_desc%</legend>
+					</li>
+					<li>
+						<label for="features_median">%settings_ov_median%:</label>
+						<input type="radio" name="features_median" id="features_median_1" value="1" /> %yes% 
+						<input type="radio" name="features_median" id="features_median_0" value="0" /> %no% 
+						<legend>%settings_ov_median_desc%</legend>
+					</li>
+					<li>
+						<label for="features_summary">%settings_ov_summary%:</label>
+						<input type="radio" name="features_summary" id="features_summary_1" value="1" /> %yes% 
+						<input type="radio" name="features_summary" id="features_summary_0" value="0" /> %no% 
+						<legend>%settings_ov_summary_desc%</legend>
+					</li>
+					<!--<li>
+						<label for="features_compare">%settings_ov_compare%:</label>
+						<input type="radio" name="features_compare" id="features_compare_1" value="1" /> %yes% 
+						<input type="radio" name="features_compare" id="features_compare_0" value="0" /> %no% 
+						<legend>%settings_ov_compare_desc%</legend>
+					</li>-->
+					<li>
+						<label for="features_infobox">%settings_ov_infobox%:</label>
+						<input type="radio" name="features_infobox" id="features_infobox_1" value="1" /> %yes% 
+						<input type="radio" name="features_infobox" id="features_infobox_0" value="0" /> %no% 
+						<legend>%settings_ov_infobox_desc%</legend>
+					</li>
+					<li>
+						<label for="features_brand">%settings_ov_brand%:</label>
+						<input type="radio" name="features_brand" id="features_brand_1" value="1" /> %yes% 
+						<input type="radio" name="features_brand" id="features_brand_0" value="0" /> %no% 
+						<legend>%settings_ov_brand_desc%</legend>
+					</li>
+					<li>
+						<label for="mysqli">%settings_database_extension%:</label>
+						<input type="radio" name="mysqli" id="mysqli_1" value="1" /> MySQLi 
+						<input type="radio" name="mysqli" id="mysqli_0" value="0" /> MySQL
+						<legend>%settings_database_extension_desc%</legend>
+					</li>
+					<li>
+						<label for="debug">%settings_debug%:</label>
+						<input type="radio" name="debug" id="debug_1" value="1" /> %on% 
+						<input type="radio" name="debug" id="debug_0" value="0" /> %off% 
+						<legend>%settings_debug_desc%</legend>
+					</li>
+				</ul>
+			</fieldset>
+		</form>
+	</div>
+</section>

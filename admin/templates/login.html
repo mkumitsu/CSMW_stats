@@ -1,0 +1,64 @@
+<html lang="pl">
+<body>
+<article class="mtop150">
+	<h1>%Login%</h1>
+	<div>
+		<form method="post">
+			<ul>
+				<li>
+					<label for="username">%username%:</label>
+					<input type="text" name="username" id="username" />
+				</li>
+				<li>
+					<label for="userpass">%password%:</label>
+					<input type="password" name="userpass" id="userpass" />
+				</li>
+				<li>
+					<label for="login">&nbsp;</label>
+					<input type="submit" name="login" id="login" value="%login%" />
+				</li>
+			</ul>
+		</form>
+	</div>
+</article>
+
+<article class="mtop150">
+	<h1>%Infos%</h1>
+	<div>
+		<ul>
+			<li><span>%login_installed_version%:</span><b>$installed</b></li>
+			<li><span>%login_latest_version%:</span><b>$actual</b></li>
+			<li>&nbsp;</li>
+			<li>&raquo; <a href="http://www.ezstats.org" target="_blank">ezStats %homepage%</a></li>
+			<li>&raquo; <a href="$url_support" target="_blank">ezStats %support%</a></li>
+			<li>&raquo; <a href="$url_download" target="_blank">ezStats %downloads%</a></li>
+		</ul>
+		<p>&nbsp;</p>
+		<p>%follow_me%</p>
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {return;}
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		<div class="fb-like-box" data-href="http://www.facebook.com/ezStats" data-width="250" data-show-faces="false" data-stream="false" data-header="false"></div>
+		<p>
+			<a href="https://twitter.com/ezzemm4u" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @ezzemm4u</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		</p>
+		<p>&nbsp;</p>
+		<p>
+			%donate%
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+				<input type="hidden" name="cmd" value="_s-xclick">
+				<input type="hidden" name="hosted_button_id" value="PP4DS2GSB24CQ">
+				<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+				<img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
+			</form>
+		</p>
+	</div>
+</article>
+</body>
+</html>

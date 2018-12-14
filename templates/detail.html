@@ -1,0 +1,63 @@
+<script type="text/javascript" charset="utf-8">
+	jQuery.noConflict();
+	
+	(function($) {
+		$(document).ready(function(){
+			var DOM = $('#ezDetail');
+			
+			$('.ezHeadNav a', DOM).on("click", function(e) {
+				e.preventDefault();
+				$.ajax({
+					type:     "GET",
+					url:      "$path"+"detail.php",
+					dataType: "html",
+					data: {
+						pid:    $playerid,
+						plugin: $plugin,
+						action: $(this).attr("href")
+					},
+					beforeSend: function () {
+						$('#ezContent', DOM).css('visibility', 'hidden');
+						$('#ezLoader', DOM).show();
+					},
+					error: function(data) {
+						if (data && data.responseText) $.clog(data.responseText);
+					},
+					success: function(data) {
+						$('#ezContent', DOM).html(data).css('visibility', 'visible');
+						$('#ezLoader', DOM).hide();
+					}
+				});
+			});
+		});
+	})(jQuery);
+</script>
+
+
+
+<div id="ezDetail">
+	<div class="ezHead">
+		<div class="ezHeadHead">
+			<h1><b>$name</b>
+			<br>
+			aktywność: $w_battles bitew
+			<br>
+			</h1>
+			
+		</div>
+		<div class="ezHeadButtons">
+			<a target="blank" href="$url">%player_profile%</a>
+		</div>
+		<div class="ezHeadNav">
+			<ul>
+				<li><a href="detail_overview">%nav_overview%</a></li>
+				<li><a href="detail_ships">%nav_ships%</a></li>
+				<li><a href="detail_achievements">%nav_achievements%</a></li>
+				
+				<li><a href="detail_signatures">%nav_signatures%</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="ezContent"></div>
+	<div id="ezLoader" style="display: none"></div>
+</div>

@@ -1,0 +1,72 @@
+<script type="text/javascript" charset="utf-8">
+	(function($) {
+		$(document).ready(function(){
+			var options = {
+				phrase:   '%saving% ...',
+				sid:      '$sid'
+			}
+			
+			
+			$.plugin($('#functions_cms').val(), options);
+			
+			
+			$('#properties_path').on("keyup", function(e) {
+				$.settings($(this), options);
+			});
+			
+			$('#functions_cms').on("change", function(e) {
+				$.plugin($(this).val(), options);
+			})
+		});
+	})(jQuery);
+</script>
+
+
+<section>
+	<h1>%plugins%</h1>
+	
+	<div class="lcol">
+		<h2>%info%</h2>
+		<p>%plugins_desc_1%</p>
+		<p>%plugins_desc_2%</p>
+	</div>
+	<div class="rcol">
+		<h2>%nav_settings%</h2>
+		<table class="noborder">
+			<tbody>
+				<tr>
+					<td>
+						<span class="info"></span>
+						<x-tooltip trigger-style="hover" style="width: 400px">$path_description</x-tooltip>
+					</td>
+					<td>
+						<span class="small">%plugin_path_label%</span><br/>
+						<input type="text" size="60" name="properties_path" id="properties_path" value="$path" />
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>
+						<span class="info"></span>
+						<x-tooltip trigger-style="hover" style="width: 600px">%plugins_step3%<br/><a href="$url_support" target="_blank">ezStats Support</a></x-tooltip>
+					</td>
+					<td>
+						<span class="small">%plugin_cms_label%</span><br/>
+						<select name="functions_cms" id="functions_cms">$plugins</select>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="clear"></div>
+</section>
+
+
+<section>
+	<h1>%manual%</h1>
+	<div>
+		<fieldset id="manual"></fieldset>
+	</div>
+</section>

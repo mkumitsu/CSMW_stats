@@ -1,0 +1,29 @@
+<script type="text/javascript" charset="utf-8">
+	(function($) {
+		$(document).ready(function(){
+			var options = {
+				phrase:   '%saving% ...',
+				sid:      '$sid'
+			}
+			
+			$.user_load(options);
+		});
+	})(jQuery);
+</script>
+
+<section id="userlist">
+	<h2>%edit_user%</h2>
+	<div>
+		<table class="userlist">
+			<thead>
+				<tr class="tleft">
+					<th>%name%</th>
+					<th>%user_rights%</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+</section>

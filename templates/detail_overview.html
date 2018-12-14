@@ -1,0 +1,104 @@
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+</head>
+<style>
+	x-tooltip {
+		padding: 2px 4px !important;
+	}
+	.ezRatio {
+		text-align: center;
+		padding-bottom: 0.5em;
+	}
+	.ezRatio p {
+		margin: 0 auto;
+		font-size: 4em;
+		font-weight: bold;
+		text-align: center;
+		line-height: 1em;
+	}
+	.ezPlaceIcon {
+		width: 84px;
+		height: 84px;
+		float: right;
+		margin-left: 4px;
+	}
+</style>
+
+<div class="ezContent">
+	<div class="ez3">
+		<h1>%main_stats%</h1>
+		<dl>
+			<dt>%last_battle_time%:</dt><dd>$last_battle_time</dd>
+			<dt>%xp%:</dt><dd>$s[xp]</dd>
+			<dt>%frags%:</dt><dd>$s[frags]</dd>
+			<dt>%planes_killed%:</dt><dd>$s[planes_killed]</dd>
+			<dt>%battles%:</dt><dd>$s[battles]</dd>
+			<dt>%survived_battles%:</dt><dd>$s[survived_battles]</dd>
+			<dt>%wins%:</dt><dd>$s[wins]</dd>
+			<dt>%survived_wins%:</dt><dd>$s[survived_wins]</dd>
+			<dt>%draws%:</dt><dd>$s[draws]</dd>
+			<dt>%losses%:</dt><dd>$s[losses]</dd>
+			<dt>%capture_points%:</dt><dd>$s[capture_points]</dd>
+			<dt>%dropped_capture_points%:</dt><dd>$s[dropped_capture_points]</dd>
+			<dt>%damage_dealt%:</dt><dd>$s[damage_dealt]</dd>			
+		</dl>
+	</div>
+	
+	<div class="ez3">
+		<h1>%max_stats%</h1>
+		<dl>
+			<dt>%max_xp%:</dt><dd>$s[max_xp]</dd>
+			<dt>%max_xp_ship_id%:</dt><dd>$s[max_xp_ship_id]</dd>
+			<dt>%max_frags_battle%:</dt><dd>$s[max_frags_battle]</dd>
+			<dt>%max_frags_ship_id%:</dt><dd>$s[max_frags_ship_id]</dd>
+			<dt>%max_planes_killed%:</dt><dd>$s[max_planes_killed]</dd>
+			<dt>%max_planes_killed_ship_id%:</dt><dd>$s[max_planes_killed_ship_id]</dd>
+			<dt>%max_damage_dealt%:</dt><dd>$s[max_damage_dealt]</dd>
+			<dt>%max_damage_dealt_ship_id%:</dt><dd>$s[max_damage_dealt_ship_id]</dd>
+		</dl>
+	</div>
+	
+	<div class="ez3" style="margin: 0">
+		<h1>%detailed_stats%</h1>
+		<dl>
+			<dt><b>%main_battery%</b></dt>
+			<dt>%main_battery_frags%:</dt><dd>$s[main_battery_frags]</dd>
+			<dt>%main_battery_hits%:</dt><dd>$s[main_battery_hits]</dd>
+			<dt>%main_battery_shots%:</dt><dd>$s[main_battery_shots]</dd>
+			<dt>%main_battery_max_frags_battle%:</dt><dd>$s[main_battery_max_frags_battle]</dd>
+			<dt>%main_battery_max_frags_ship_id%:</dt><dd>$s[main_battery_max_frags_ship_id]</dd>
+			<dt> </dt>
+			<dt><b>%second_battery%</b></dt>
+			<dt>%second_battery_frags%:</dt><dd>$s[second_battery_frags]</dd>
+			<dt>%second_battery_hits%:</dt><dd>$s[second_battery_hits]</dd>
+			<dt>%second_battery_shots%:</dt><dd>$s[second_battery_shots]</dd>
+			<dt>%second_battery_max_frags_battle%:</dt><dd>$s[second_battery_max_frags_battle]</dd>
+			<dt>%second_battery_max_frags_ship_id%:</dt><dd>$s[second_battery_max_frags_ship_id]</dd>
+			<dt> </dt>
+			<dt><b>%torpedoes%</b></dt>
+			<dt>%torpedoes_frags%:</dt><dd>$s[torpedoes_frags]</dd>
+			<dt>%torpedoes_hits%:</dt><dd>$s[torpedoes_hits]</dd>
+			<dt>%torpedoes_shots%:</dt><dd>$s[torpedoes_shots]</dd>
+			<dt>%torpedoes_max_frags_battle%:</dt><dd>$s[torpedoes_max_frags_battle]</dd>
+			<dt>%torpedoes_max_frags_ship_id%:</dt><dd>$s[torpedoes_max_frags_ship_id]</dd>
+			<dt> </dt>
+			<dt><b>%aircraft%</b></dt>
+			<dt>%aircraft_frags%:</dt><dd>$s[aircraft_frags]</dd>
+			<dt>%aircraft_max_frags_battle%:</dt><dd>$s[aircraft_max_frags_battle]</dd>
+			<dt>%aircraft_max_frags_ship_id%:</dt><dd>$s[aircraft_max_frags_ship_id]</dd>
+			<dt> </dt>
+			<dt><b>%ramming%</b></dt>
+			<dt>%ramming_frags%:</dt><dd>$s[ramming_frags]</dd>
+			<dt>%ramming_max_frags_battle%:</dt><dd>$s[ramming_max_frags_battle]</dd>
+			<dt>%ramming_max_frags_ship_id%:</dt><dd>$s[ramming_max_frags_ship_id]</dd>
+		</dl>
+	</div>
+	
+	<div class="clearfix"></div>
+	
+	<br/>
+	<div class="tleft"><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wszystkie statystyki są podane dla bitew PVP</small></div>
+	<div class="tright"><small>%dateCreated%: $created</small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>%dateUpdate%: $state</small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>
+</html>

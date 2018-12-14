@@ -1,0 +1,42 @@
+<!-- Loading of stylesheets -->
+<link rel="stylesheet" href="#PATH#styles/fonts.css" />
+<link rel="stylesheet" href="#PATH#styles/_style.php?files=main,plugin,detail" />
+<link rel="stylesheet" href="#PATH#styles/tooltipp.css" />
+<link rel="stylesheet" href="#PATH#styles/magnific-popup.css" />
+
+<!-- Loading of JS scripts -->
+<!--<script src="#PATH#scripts/vendor/modernizr-2.6.2.min.js"></script>-->
+<!--<script src="#PATH#scripts/vendor/jquery-migrate-1.2.1.js"></script>-->
+<script src="#PATH#scripts/vendor/jquery-1.11.0.min.js"></script>
+<script src="#PATH#scripts/main.js"></script>
+<script src="#PATH#scripts/overview.js"></script>
+
+<!-- Start of JS scripts -->
+<script type="text/javascript" charset="utf-8">
+	jQuery.noConflict();
+	
+	(function($) {
+		$(document).ready(function(){
+		});
+	})(jQuery);
+</script>
+
+<div id="ezStats">
+	<table id="ezTop">
+		<tr>
+			<td><h3>Kills</h3><table>$kills</table></td>
+			<td><h3>Ground Targets</h3><table>$ground_targets</table></td>
+			<td><h3>Accuracy</h3><table>$accuracy</table></td>
+		</tr>
+		<tr>
+			<td><h3>Kills per Battle</h3><table>$kills_per_battle</table></td>
+			<td><h3>Damage per Battle</h3><table>$damage_per_battle</table></td>
+			<td><h3>Win-Loss-Ratio</h3><table>$wlr</table></td>
+		</tr>
+		<tr>
+			<td><h3>Experience</h3><table>$experience_wo_bonus</table></td>
+			<td><h3>Experience with Bonus</h3><table>$experience_w_bonus</table></td>
+			<td><h3>Experience per Battle</h3><table>$xp_per_battle</table></td>
+		</tr>
+	</table>
+</div>

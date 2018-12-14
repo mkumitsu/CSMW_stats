@@ -1,0 +1,63 @@
+fieldset li {
+	border: 1px solid #666666;
+	?border-radius: $section_border_radius;
+	padding: $elem_gap_small $elem_gap_med;
+}
+
+form li:not(:last-child ), fieldset li:not(:last-child ) {
+	margin: 0 0 20px;
+}
+
+fieldset ol > li > ul {
+	list-style-type: disc;
+}
+
+fieldset ol > li > ul > li{
+	border: none;
+	margin: 3px 0 3px 15px !important;
+	padding: 0;
+}
+
+legend {
+	color: #323232;
+	margin: 0 0 0 150px;
+	font-style: oblique;
+	padding: 5px 0 0 0;
+}
+
+label {
+	float: left;
+	padding: 5px 0 0 0;
+	width: 150px;
+}
+
+input:not([type="checkbox"]), textarea, select {
+	font-family: "$font_family";
+	padding: 4px 8px;
+	?box-shadow: $form_input_box_shadow;
+	?border-radius: $form_input_border_radius;
+	border: $form_input_border;
+}
+
+option {
+	background: white;
+	border: 0;
+	padding: 0 8px;
+	font-family: "$font_family";
+}
+
+input[type=submit] {
+	padding: 4px 8px;
+	?box-shadow: $form_input_box_shadow;
+	border: $form_input_border;
+	cursor: pointer;
+}
+
+input[type=radio] {
+	margin: 0 0 3px 10px; padding: 0;
+}
+
+input::-webkit-input-placeholder      { color: $form_label_color; font-style: oblique; }
+input:-moz-placeholder                          { color: $form_label_color; font-style: oblique; }
+textarea::-webkit-input-placeholder { color: $form_label_color; font-style: oblique; }
+textarea:-moz-placeholder                     { color: $form_label_color; font-style: oblique; }

@@ -1,0 +1,278 @@
+/* Body und Wrapper */
+body { 
+	background: url("../../styles/wallpaper/wallpaper1.jpg") no-repeat fixed center top black;
+}
+body, input, textarea { 
+	color: $font_dark;
+	font-family: "$font_family";
+	font-size: $font_size;
+	line-height: 1.4em;
+}
+.wrap {
+	margin: 0 auto;
+	width: 1000px;
+	position: relative;
+}
+
+
+/* Header */
+header {
+	background-color: $background_color_dark;
+	border-bottom: 1px solid $font_colored;
+	height: 100px;
+	margin-bottom: 40px;
+}
+header hgroup{
+	height: 50px;
+	overflow: hidden;
+}
+hgroup h1, hgroup h2 {
+	color: $font_bright;
+	float: left;
+	font-family: $font_family_hl;
+	font-size: 1.6em;
+	font-weight: normal;
+	padding: 15px 0 0 30px;
+	text-shadow: none;
+	text-transform: none;
+}
+
+
+/* Navigation */
+nav { 
+	height: 50px;
+}
+nav ul {
+	margin: 0; padding: 0;
+}
+nav li {
+	float: left;
+}
+nav a {
+	font-family: "$font_family_h2";
+	color: $font_bright;
+	display: inline-block;
+	padding: 15px 30px;
+	text-decoration: none;
+}
+nav a:hover, nav a.hover {
+	color: $font_dark;
+	text-decoration: none;
+	?border-radius: 3px 3px 0 0;
+	background: rgb(229,229,229);
+	background: -moz-linear-gradient(top,  rgba(229,229,229,1) 0%, rgba(255,255,255,1) 50%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(229,229,229,1)), color-stop(50%,rgba(255,255,255,1)));
+	background: -webkit-linear-gradient(top,  rgba(229,229,229,1) 0%,rgba(255,255,255,1) 50%);
+	background: -o-linear-gradient(top,  rgba(229,229,229,1) 0%,rgba(255,255,255,1) 50%);
+	background: -ms-linear-gradient(top,  rgba(229,229,229,1) 0%,rgba(255,255,255,1) 50%);
+	background: linear-gradient(to bottom,  rgba(229,229,229,1) 0%,rgba(255,255,255,1) 50%);
+}
+
+
+/* Elemente */
+aside, #updatenotes { 
+	color: $font_bright;
+	background-color: $background_color_dark;
+	position: fixed;
+	display: none;
+	padding: 20px;
+	border-right: 5px solid $font_colored;
+	left: 0px;
+	top: 120px;
+	?border-radius: 0 3px 3px 0;
+	?box-shadow: $section_box_shadow;
+}
+#updatenotes {
+	top: 200px;
+	width: 250px;
+}
+
+footer {
+	color: $font_bright !important;
+	background-color: $background_color_dark;
+	position: fixed;
+	padding: 20px;
+	border-right: 5px solid $font_colored;
+	bottom: 0px;
+	right: 120px;
+	?border-radius: 3px 3px 0 0;
+	?box-shadow: $section_box_shadow;
+}
+footer a, footer a:hover {
+	color: $font_bright;
+}
+
+x-tooltip {
+	font-family: $font_family !important;
+	text-align: left !important;
+	font-weight: normal !important;
+	color: $font_bright !important;
+	border: 1px solid $font_bright !important;
+	padding: 10px 20px !important;
+	font-size: $font_size !important;
+	background-color: rgba(0, 0, 0, 1);
+	border-radius: 5px;
+	box-shadow: $section_box_shadow;
+	line-height: 1.6em;
+}
+x-tooltip  a{
+	padding: 1px 10px;
+	background-color: $font_bright;
+	color: $font_dark;
+	border-radius: $section_border_radius;
+}
+x-tooltip  a:hover{
+	color: $font_bright;
+	background-color: $font_colored;
+	border-radius: 3px;
+	text-decoration: none;
+}
+
+
+/* Content */
+section, article {
+	position: static;
+	margin: 0 0 40px 0;
+	background-color: $background_color_bright;
+	?border-radius: $section_border_radius;
+	?box-shadow: $section_box_shadow, $section_box_shadow_inset;
+	overflow: hidden;
+}
+section > div, article > div {
+	margin: 20px;
+}
+
+article {
+	width: 400px;
+	float: left;
+	min-height: 160px;
+}
+article:not(:last-of-type ) {
+	margin-right: 40px;
+}
+
+
+section h1, article h1 { 
+	background-color: $background_color_dark;
+	color: $font_bright;
+	font-family: $font_family_h2;
+	font-size: 1.2em;
+	font-weight: normal;
+	border-bottom: 1px solid $font_colored;
+	padding: 5px 20px;
+}
+section h2, article h2 { 
+	background-color: $background_color_dark;
+	color: $font_bright;
+	font-family: $font_family_h2;
+	font-size: 1em;
+	font-weight: normal;
+	border-bottom: 1px solid $font_colored;
+	padding: 1px 20px;
+	margin-bottom: 0.5em;
+}
+
+ol				{ margin-left: 2em; }
+
+h1, h2			{ padding-bottom: 1em; text-transform: capitalize; } 
+p, ol, ul 		{ padding-bottom: 0.5em; }
+
+table { 
+	width: 100%; 
+}
+th { 
+	?border-radius: 3px 3px 0 0;
+	border-bottom: $table_th_border; 
+	background-color: $background_color_bright;
+	height: 34px; 
+	vertical-align: middle; 
+	text-align: left; 
+	padding: 0px 5px;
+	font-family: $font_family_h1;
+	font-size: 1em;
+	font-weight: normal;
+}
+td { 
+	border-bottom: $table_td_border; 
+	padding: 0px 4px; 
+	height: 30px;
+	font-size: 0.9em; 
+}
+.info { 
+	cursor: pointer; 
+	display: inline-block; 
+	width: 16px; 
+	height: 16px; 
+	background: url(images/info.png) center center no-repeat; 
+	position: relative;
+	bottom: -3px;
+}
+
+a				{ color: $font_colored; text-decoration: none; }
+a:hover			{ color: $font_dark; text-decoration: underline; }
+
+li > span			{ width: 160px; float: left; }
+small, .small	{ font-size: 0.9em; color: #323232; padding: 0px 10px; line-height: 1.6em;}
+
+.lcol			{ float: left; width: 460px; }
+.rcol			{ float: right; width: 460px; }
+.nowrap			{ white-space: nowrap; }
+.noborder td		{ border: none; }
+.horizontal li 	{ float: left; margin-bottom: 5px; padding: 0 $elem_gap_med 0 0; }
+.fleft			{ float: left; }
+.fright			{ float: right; }
+.clear			{ clear: both; }
+.center			{ text-align: center; }
+.tright			{ text-align: right; }
+.tleft			{ text-align: left !important; }
+.hidden			{ display: none; }
+.uppercase		{ text-transform: uppercase !important; }
+.mtop150		{ margin-top: 200px; }
+.error			{ color: $font_color_link; font-size: 1.2em; text-shadow: $font_light_text_shadow; }
+.explain_nav 	{ width: 793px; height: 161px; left: -320px; top: 60px; position: absolute; background: url("images/explainpic_nav.png") no-repeat center top transparent; }
+.explain_add 	{ width: 547px; height: 231px; right: 0; top: 100px; position: absolute; background: url("images/explainpic_add.png") no-repeat center top transparent; }
+.prettyLoader	{ background: url("images/prettyLoader.png") top left no-repeat;height:30px;position:absolute;width:30px;z-index:30000;}.prettyLoader img{display:block;margin:7px 0 0 7px;} .pl_ie6{background-image: url(images/prettyLoader.gif);}
+.delete			{ background: none !important; background-color: $font_colored !important; color: $font_bright !important; }
+a.button, .buttons a { padding: 4px 10px; white-space:nowrap; position: relative; background: #f6f6f6;background: -webkit-gradient(linear, left top, left bottom, from(#ddd), to(#fafafa), color-stop(0.5, #fff), color-stop(0.6, #ddd), color-stop(0.95, #FFF));border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px;border: 1px solid #BBB;border-top-color: #CCC;border-bottom-color: #999;border-right-color: #AAA;color:#333;text-decoration:none !important;-moz-box-shadow: 0 4px 4px rgba(255,255,255,.6) inset, 0px -9px 10px -4px rgba(255, 255, 255,1) inset, 0 -20px 1px -6px rgba(0, 0, 0, 0.125) inset;outline: none !important;} a.button:hover, .buttons a:hover, .buttons a:focus{background: rgba(0,0,0,.05);background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#fafafa), color-stop(0.5, #fff), color-stop(0.6, #eee), color-stop(0.95, #FFF));border: 1px solid #999;border-top-color: #AAA;border-bottom-color: #777;border-right-color: #999;color: #222;}
+a.button:hover, .buttons a:hover	{ background-color: $background_color_bright; }
+
+.ezTooltip 		{ 
+	?border-radius: 4px; ?box-shadow: $section_box_shadow; 
+	padding: 0.5em 1em; z-index: 2000; border: 1px solid $font_color; background-color: white; 
+}
+
+
+.numberCircle {
+	?border-radius: 999px; border: 2px solid #666666; border-radius: 999px 999px 999px 999px; color: #666666; display: inline-block; font-size: 2em; height: 24px; margin: 10px; padding: 13px; text-align: center; width: 24px; float: none;
+}
+
+.bigloader		{ 
+	background: url("images/ajax-loader-big.gif") no-repeat scroll center center $font_bright; margin: 0 auto; width: 100px; height: 100px; 
+	?border-radius: $section_border_radius;
+	?box-shadow: $section_box_shadow, $section_box_shadow_inset;
+}
+
+.sortable li 		{ 
+	color: $font_bright;
+	?border-radius: $section_border_radius; 
+	margin-bottom: 10px; padding: 4px 10px; cursor: pointer; 
+	background-color: $background_color_dark;
+	position: relative;
+}
+.sortable input 	{ 
+	position: absolute;
+	top: 7px;
+	left: 10px;
+}
+.sortable span 	{ 
+	float: none; 
+	display: block; 
+	width: 94%; 
+	padding-left: 6%;
+	background: url(images/move.png) center right no-repeat; 
+}
+.sortable .placeholder { background-color: $font_colored; }
+
+.icon_xbox		{ display: block; width: 16px; height: 16px; background: url(images/icon_360.png) center center no-repeat; }
+.icon_pc		{ display: block; width: 16px; height: 16px; background: url(images/icon_pc.png) center center no-repeat; }
+.icon_ps3		{ display: block; width: 16px; height: 16px; background: url(images/icon_ps3.png) center center no-repeat; }

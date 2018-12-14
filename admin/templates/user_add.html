@@ -1,0 +1,45 @@
+<script type="text/javascript" charset="utf-8">
+	(function($) {
+		$(document).ready(function(){
+			var options = {
+				phrase:   '%saving% ...',
+				sid:      '$sid'
+			}
+			
+			$('#adduser .button').click(function(e) {
+				e.preventDefault();
+				$.user_add(options);
+			});
+		});
+	})(jQuery);
+</script>
+
+
+<section id="adduser">
+	<h2>%add_user%</h2>
+	<div>
+		<table class="noborder">
+			<thead>
+				<tr class="tleft">
+					<th>%username%</th>
+					<th>%password%</th>
+					<th>%user_rights%</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input type="text" name="username" id="username" size="" value="" /></td>
+					<td><input type="text" name="password" id="password" size="" value="" /></td>
+					<td>
+						<select name="adminpower" id="adminpower">
+							<option value="1">%user_full_rights%</option>
+							<option value="0">%user_manage_player_only%</option>
+						</select>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<br/>
+		<div class="tright"><a href="add_user" class="button">%add_user%</a></div>
+	</div>
+</section>

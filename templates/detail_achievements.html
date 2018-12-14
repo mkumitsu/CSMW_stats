@@ -1,0 +1,130 @@
+<style>
+	x-tooltip {
+		padding: 2px 4px !important;
+	}
+	.ezRatio {
+		text-align: center;
+		padding-bottom: 0.5em;
+	}
+	.ezRatio p {
+		margin: 0 auto;
+		font-size: 4em;
+		font-weight: bold;
+		text-align: center;
+		line-height: 5em;
+	}
+	.ezPlaceIcon {
+		width: 84px;
+		height: 84px;
+		float: right, center;
+		margin-left: 4px;
+	}
+	.ezRankIcon {
+		width: 96px;
+		height: 96px;
+		float: left;
+		margin-left: 4px;
+	}
+</style>
+
+<div class="ezContent">
+	
+	<div class="ezContent">
+	<div class="ez6">
+		<h1>%Achievements%</h1>
+		
+			<div align="left">
+				<table border="0" width="33%">
+					<tr>
+						<td width="90" align="left">$arsonist_icon <x-tooltip trigger-style="hover">Podpal okręt przeciwnika i zniszcz go. Uszkodzenia spowodowane przez pożar muszą przekroczyć 40% normalnej puli PW okrętu.</x-tooltip></td>
+						<td width="80" align="left">%arsonist%</td>
+						<td align="left" width="20">$a[ARSONIST]</td>
+						<td width="100" align="left">&nbsp;</td>
+						<td align="left">$fireproof_icon <x-tooltip trigger-style="hover">Odnieś uszkodzenia w wyniku pożaru przekraczające 40% normalnej puli PW Twojego okrętu i przetrwaj bitwę.</x-tooltip></td>
+						<td align="left">%fireproof%</td>
+						<td align="left">$a[FIREPROOF]</td>
+					</tr>
+					<tr>
+						<td width="90" align="left">$clear_sky_icon <x-tooltip trigger-style="hover">Zniszcz samoloty wroga (przynajmniej 30 w jednej bitwie) przy wykorzystaniu myśliwców lub ustalając nieprzyjacielskie samoloty jako cel priorytetowy dla swojego uzbrojenia przeciwlotniczego.</x-tooltip></td>
+						<td width="80" align="left">%clear_sky%</td>
+						<td align="left" width="20">$a[CLEAR_SKY]</td>
+						<td width="100" align="left">&nbsp;</td>
+						<td align="left">$first_blood_icon <x-tooltip trigger-style="hover">Zniszcz okręt przeciwnika jako pierwszy w bitwie.</x-tooltip></td>
+						<td align="left">%first_blood%</td>
+						<td align="left">$a[FIRST_BLOOD]</td>
+					</tr>
+					<tr>
+						<td width="90" align="left">$confederate_icon <x-tooltip trigger-style="hover">Zadaj uszkodzenia przynajmniej 6 okrętom wroga. Uszkodzenia zadane każdemu z przeciwników muszą przekroczyć 20% jego normalnej puli PW.</x-tooltip></td>
+						<td width="80" align="left">%confederate%</td>
+						<td align="left" width="20">$a[SUPPORT]</td>
+						<td width="100" align="left">&nbsp;</td>
+						<td align="left">$flesh_wound_icon <x-tooltip trigger-style="hover">Zniszcz dowolny okręt przeciwnika po tym, jak Twój okręt został zniszczony</x-tooltip></td>
+						<td align="left">%flesh_wound%</td>
+						<td align="left">$a[RETRIBUTION]</td>
+					</tr>
+					<tr>
+						<td width="90" align="left">$cqe_icon <x-tooltip trigger-style="hover">Uszkodź okręt przeciwnika ogniem dodatkowej baterii, a następnie zniszcz go. Uszkodzenia zadane przez działa baterii dodatkowej muszą przekroczyć 20% normalnej puli PW Twojego okrętu.</x-tooltip></td>
+						<td width="80" align="left">%cqe%</td>
+						<td align="left" width="20">$a[ATBA_CALIBER]</td>
+						<td width="100" align="left">&nbsp;</td>
+						<td align="left">$high_caliber_icon <x-tooltip trigger-style="hover">Zadaj uszkodzenia przynajmniej 4 okrętom wroga. Zadane uszkodzenia muszą przekroczyć 30% całkowitej puli PW wszystkich okrętów drużyny przeciwnej.</x-tooltip></td>
+						<td align="left">%high_caliber%</td>
+						<td align="left">$a[MAIN_CALIBER]</td>
+					</tr>
+					<tr>
+						<td width="90" align="left">$detonation_icon <x-tooltip trigger-style="hover">Odnieś uszkodzenie magazynu, w wyniku którego nastąpi eksplozja.</x-tooltip></td>
+						<td width="80" align="left">%detonation%</td>
+						<td align="left" width="20">$a[DETONATED]</td>
+						<td width="100" align="left">&nbsp;</td>
+						<td align="left">$liquidator_icon <x-tooltip trigger-style="hover">Spowoduj zalanie nieprzyjacielskiego okrętu i zniszcz go. Uszkodzenia wynikłe z zalania muszą przekroczyć 40% normalnej puli PW okrętu nieprzyjaciela.</x-tooltip></td>
+						<td align="left">%liquidator%</td>
+						<td align="left">$a[LIQUIDATOR]</td>
+					</tr>
+					<tr>
+						<td width="90" align="left">$devastating_icon <x-tooltip trigger-style="hover">Zniszcz okręt przeciwnika jedną salwą artyleryjską, torpedową lub atakiem samolotów, zadając mu uszkodzenia przekraczające 50% jego normalnej wytrzymałości.</x-tooltip></td>
+						<td width="80" align="left">%devastating%</td>
+						<td align="left" width="20">$a[INSTANT_KILL]</td>
+						<td width="100" align="left">&nbsp;</td>
+						<td align="left">$solo_icon <x-tooltip trigger-style="hover">Zostań sam przeciwko przynajmniej 4 okrętom wroga i wygraj bitwę.</x-tooltip</td>
+						<td align="left">%solo%</td>
+						<td align="left">$a[ONE_SOLDIER_IN_THE_FIELD]</td>
+					</tr>
+					<tr>
+						<td width="90" align="left">$die_hard_icon <x-tooltip trigger-style="hover">Zniszcz okręt przeciwnika taranując go i przetrwaj.</x-tooltip></td>
+						<td width="80" align="left">%die_hard%</td>
+						<td align="left" width="20">$a[HEADBUTT]</td>
+						<td width="100" align="left">&nbsp;</td>
+						<td align="left">$unsinkable_icon <x-tooltip trigger-style="hover">Otrzymaj uszkodzenia w wyniku zalania przekraczające 40% normalnej puli PW Twojego okrętu i przetrwaj bitwę.</x-tooltip></td>
+						<td align="left">%unsinkable%</td>
+						<td align="left">$a[UNSINKABLE]</td>
+					</tr>
+					<tr>
+						<td width="90" align="left">$double_strike_icon <x-tooltip trigger-style="hover">Zniszcz 2 okręty przeciwnika. Drugi cel musi być zniszczony w ciągu 10 sek. od zniszczenia pierwszego.</x-tooltip></td>
+						<td width="80" align="left">%double_strike%</td>
+						<td align="left" width="20">$a[DOUBLE_KILL]</td>
+						<td width="100" align="left">&nbsp;</td>
+						<td align="left">$witherer_icon <x-tooltip trigger-style="hover">Zadaj uszkodzenia w wysokości przynajmniej 60000 PW okrętom wroga przez zalania i pożary.</x-tooltip></td>
+						<td align="left">%witherer%</td>
+						<td align="left">$a[WITHERING]</td>
+					</tr>
+					<tr>
+						<td width="90" align="left">$dreadnought_icon <x-tooltip trigger-style="hover">Odnieś uszkodzenia przekraczające 120% normalnej puli PW Twojego okrętu od 4 lub więcej przeciwników i przetrwaj bitwę.</x-tooltip></td>
+						<td width="80" align="left">%dreadnought%</td>
+						<td align="left" width="20">$a[DREADNOUGHT]</td>
+						<td width="100" align="left">&nbsp;</td>
+						<td align="left">$warrior_icon <x-tooltip trigger-style="hover">Zatop co najmniej 5 okrętów przeciwnika w jednej bitwie.</x-tooltip></td></td>
+						<td align="left">%warrior%</td>
+						<td align="left">$a[WARRIOR]</td>
+					</tr>
+					</table>
+			</div>
+			
+		
+	</div>
+	
+	<div class="clearfix"></div>
+	
+	<br/>
+	<div class="tleft"><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wszystkie statystyki są podane dla bitew PVP</small></div>
+	<div class="tright"><small>%dateCreated%: $created</small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>%dateUpdate%: $state</small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>

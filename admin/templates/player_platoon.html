@@ -1,0 +1,91 @@
+<script type="text/javascript" charset="utf-8">
+	(function($) {
+		$(document).ready(function(){
+			var options = {
+				platoon:  $('#platoon'),
+				phrase:   '%saving% ...',
+				sid:      '$sid'
+			}
+			
+			$.platoon_load(options);
+			
+			$('#update_platoon_sync_option :input', options.elem).on("change", function(e) {
+				$.settings($(this), options);
+			});
+			
+			$('.button[href="add_platoon"]', options.elem).click(function(e) {
+				e.preventDefault();
+				$.platoon_add(options);
+			});
+			
+		});
+	})(jQuery);
+</script>
+
+<section id="platoon">
+	<h1>%platoon_sync%</h1>
+	
+	<div class="lcol">
+		<h2>%info%</h2>
+		<p>
+			%platoon_info% 
+			<span class="info"></span>
+			<x-tooltip trigger-style="hover">
+				%more_informations%<br/>
+				<a href="$url_wiki" target="_blank">Clan Syncronisation</a>
+			</x-tooltip>
+		</p>
+		<table id="update_platoon_sync_option" class="noborder">
+			<tbody>
+				<tr>
+					<td><input type="radio" name="update_platoon_sync_option" id="update_platoon_sync_option_1" value="1" /></td>
+					<td>%platoon_sync_wout_delete%</td>
+				</tr>
+				<tr>
+					<td><input type="radio" name="update_platoon_sync_option" id="update_platoon_sync_option_2" value="2" /></td>
+					<td>%platoon_sync_with_delete%</td>
+				</tr>
+				<tr>
+					<td><input type="radio" name="update_platoon_sync_option" id="update_platoon_sync_option_0" value="0" /></td>
+					<td>%platoon_no_sync%</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="rcol">
+		<h2>%platoon_manage%</h2>
+		<table class="noborder" id="add_platoon">
+			<tbody>
+				<tr>
+					<td><span class="info"></span><x-tooltip trigger-style="hover" style="width: 450px">%platoon_id_info%</x-tooltip></td>
+					<td><input type="text" name="platoonid" id="platoonid" size="40" placeholder="%platoon_enter_id_here_2%" value="" /></td>
+					<td>
+						<select name="platoon_region" id="platoon_region">
+							<option id="platoon_region_eu"   value="eu">Europe</option>
+							<option id="platoon_region_na"   value="na">North America</option>
+							<option id="platoon_region_ru"   value="ru">Russia</option>
+							<option id="platoon_region_asia" value="asia">Asia</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td colspan="2"><a href="add_platoon" class="button">%platoon_add%</a></td>
+				</tr>
+			</tbody>
+		</table>
+		<br/><br/>
+		<table id="platoonlist" style="display: none">
+			<thead>
+				<tr>
+					<th></th>
+					<th class="tleft">%platoon_name%</th>
+					<th class="tleft">%settings_region%</th>
+					<th>&nbsp;</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+	</div>
+	<div class="clear"></div>
+</section>

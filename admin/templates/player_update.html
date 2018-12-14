@@ -1,0 +1,71 @@
+<script type="text/javascript" charset="utf-8">
+	(function($) {
+		$(document).ready(function(){
+			var options = {
+				phrase:    '%saving% ...',
+				sid:       '$sid'
+			}
+			
+			$('.button[href=update_player]').click(function(e) {
+				e.preventDefault();
+				$.player_update(options);
+			});
+			
+			$('.button[href=sync_platoon]').click(function(e) {
+				e.preventDefault();
+				$.platoon_sync(options);
+			});
+			
+			$('#update_player_per_update, #update_hours_before_refresh').on("keyup change", function(e) {
+				$.settings($(this), options);
+			});
+		});
+	})(jQuery);
+</script>
+
+<section id="updateplayer">
+	<h1>%update_player%</h1>
+	
+	<div class="lcol">
+		<h2>%info%</h2>
+		<p>
+			%update_help_5% 
+			<span class="info"></span>
+			<x-tooltip trigger-style="hover" style="width: 500px">
+				%update_help_6% <br/>
+				<a href="update.php" target="_blank">%update_help_3%</a><br/><br/>
+				%update_help_7% <br/>
+				<a href="$url_wiki" target="_blank">Stats Update</a>
+			</x-tooltip>
+		</p>
+		<table id="update_platoon_sync_option" class="noborder">
+			<tbody>
+				<tr>
+					<td><input class="fleft" type="text" size="3" name="update_player_per_update" id="update_player_per_update" value="$preset[update_player_per_update]" /></td>
+					<td>%updatecount%</td>
+				</tr>
+				<!--<tr>
+					<td><input class="fleft" type="text" size="3" name="update_hours_before_refresh" id="update_hours_before_refresh" value="$preset[update_hours_before_refresh]" /></td>
+					<td>%max_stats_age%</td>
+				</tr>-->
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="rcol">
+		<h2>%manual_update%</h2>
+		<p style="padding-top: 10px"><a href="update_player" class="button">%update_now%</a> <!--<a href="sync_platoon" class="button">%platoon_sync_now%</a>--></p>
+		<p>%lastupdate%: <span id="lastcheckall">$lastcheckall</span></p>
+	</div>
+	
+	<div class="clear"></div>
+</section>
+
+
+<div id="updatenotes">
+	<div id="loader">
+		<div class="bigloader"></div>
+		<p>&nbsp;</p><p>$message</p>
+	</div>
+	<div id="result"></div>
+</div>
