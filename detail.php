@@ -128,7 +128,8 @@
 			$w_battles = $s['battles'] - $s['activity'];
 			
 			mysql_select_db('18528617_wows');
-			$encyklopedia = mysql_query('SELECT ship FROM ez3wows__encyclopedia');
+			mysql_query('SET NAMES utf8');
+			$encyklopedia = mysql_query('SELECT * FROM ez3wows__encyclopedia');
 			$encyklopedia = mysql_fetch_array($encyklopedia);
 			$encyklopedia = json_decode($encyklopedia[0] , true);
 			
@@ -306,7 +307,7 @@
 			$size = 8;
 			$h = $stats->get('ships');
 		
-			//pobranie wszystkich ship_id danego gracza z bazy
+			//pobranie wszystkich okrętów danego gracza z bazy z tabeli stats_ships
 			foreach($h as $key=>$ship_id)
 			{
 				$ship_id2[] = $ship_id->ship_id;
@@ -314,7 +315,7 @@
 				
 			
 			mysql_select_db('18528617_wows');
-			$encyklopedia = mysql_query('SELECT ship FROM ez3wows__encyclopedia');
+			$encyklopedia = mysql_query('SELECT * FROM ez3wows__encyclopedia');
 			$encyklopedia = mysql_fetch_array($encyklopedia);
 			$encyklopedia = json_decode($encyklopedia[0] , true);
 			
@@ -324,14 +325,14 @@
 				$ship_img[] = $encyklopedia["$ship_id2[$i]"]['images']['small'];		
 			}
 			
-		/*	echo '<pre>';
+			/*echo '<pre>';
 			print_r($h);
-			echo '</pre>'; 
+			echo '</pre>';*/
 			
 			
 			echo '<pre>';
-			print_r($ship_name);
-			echo '</pre>'; */
+			print_r($ship_id2 , $ship_name);
+			echo '</pre>';
 
 			$dlugosc = count($ship_name);	
 			
@@ -451,7 +452,7 @@
 			
 			
 			mysql_select_db('18528617_wows');
-			$encyklopedia = mysql_query('SELECT ship FROM ez3wows__encyclopedia');
+			$encyklopedia = mysql_query('SELECT * FROM ez3wows__encyclopedia');
 			$encyklopedia = mysql_fetch_array($encyklopedia);
 			$encyklopedia = json_decode($encyklopedia[0] , true);
 			

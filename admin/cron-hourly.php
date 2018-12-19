@@ -22,7 +22,7 @@
 	
 	$appid    = json_decode($settings->get("properties_key"));
 	$url      = Array(
-		'eu' => 'api.worldoftanks.eu',
+		'eu' => 'api.worldofwarships.eu',
 		'na' => 'api.worldoftanks.com',
 		'ru' => 'api.worldoftanks.ru',
 		'asia' => 'api.worldoftanks.asia'

@@ -7,7 +7,6 @@
 		public  $debug = NULL;
 		public  $prefix = "";
 		public  $mysqli = 0;
-
 		public function __construct() {
 			if (defined('SQL')) {
 				$sql_data = json_decode(SQL);
@@ -26,7 +25,6 @@
 				}
 			}
 		}
-
 		public function disconnect() {
 			if ($this->mysqli) {
 				$this->connection->close();
@@ -34,7 +32,6 @@
 				if (is_resource($this->connection === true)) mysql_close($this->connection);
 			}
 		}
-
 		public function query($query) {
 			if ($this->debug) {
 				if ($this->mysqli) {
@@ -53,7 +50,6 @@
 			$this->id = $this->mysqli ? $this->connection->insert_id : mysql_insert_id($this->connection);
 			$this->counter = NULL;
 		}
-
 		public function fetchRow($column=false) {
 			if ($column === false) {
 				if ($this->mysqli) return $this->result->fetch_array();
@@ -65,12 +61,10 @@
 				return $array[$column];
 			}
 		}
-
 		public function fetchAssoc() {
 			if ($this->mysqli) return $this->result->fetch_assoc();
 			else               return mysql_fetch_assoc($this->result);
 		}
-
 		public function count() {
 			if ($this->mysqli) {
 				if ($this->counter === NULL) {

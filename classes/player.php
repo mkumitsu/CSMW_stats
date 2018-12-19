@@ -147,7 +147,7 @@
 			
 			### ACCOUNT INFO ###
 			if (true) {
-				$c=curl_init('http://'.$this->url[$region].'/wows/account/info/?application_id='.$this->appid->$region.'&account_id='.$account_id);
+				$c=curl_init('https://'.$this->url[$region].'/wows/account/info/?application_id='.$this->appid->$region.'&account_id='.$account_id);
 				curl_setopt($c,CURLOPT_HEADER,false); curl_setopt($c,CURLOPT_RETURNTRANSFER,true);
 				$result = json_decode(curl_exec($c)); curl_close($c);
 				
@@ -172,8 +172,13 @@
 								`leveling_points` = "'.$data->leveling_points.'",
 								`leveling_tier` = "'.$data->leveling_tier.'",
 								`xp` = "'.$data->statistics->pvp->xp.'",
+								`art_agro` = "'.$data->statistics->pvp->art_agro.'",
 								`battles` = "'.$data->statistics->pvp->battles.'",
 								`capture_points` = "'.$data->statistics->pvp->capture_points.'",
+								`control_captured_points` = "'.$data->statistics->pvp->control_captured_points.'",
+								`control_dropped_points` = "'.$data->statistics->pvp->control_dropped_points.'",
+								`damage_to_buildings` = "'.$data->statistics->pvp->damage_to_buildings.'",
+								`damage_scouting` = "'.$data->statistics->pvp->damage_scouting.'",
 								`dropped_capture_points` = "'.$data->statistics->pvp->dropped_capture_points.'",
 								`frags` = "'.$data->statistics->pvp->frags.'",
 								`wins` = "'.$data->statistics->pvp->wins.'",
@@ -183,10 +188,20 @@
 								`damage_dealt` = "'.$data->statistics->pvp->damage_dealt.'",
 								`max_damage_dealt` = "'.$data->statistics->pvp->max_damage_dealt.'",
 								`max_damage_dealt_ship_id` = "'.$data->statistics->pvp->max_damage_dealt_ship_id.'",
+								`max_damage_dealt_to_buildings` = "'.$data->statistics->pvp->max_damage_dealt_to_buildings.'",
+								`max_damage_dealt_to_buildings_ship_id` = "'.$data->statistics->pvp->max_damage_dealt_to_buildings_ship_id.'",
+								`max_damage_scouting` = "'.$data->statistics->pvp->max_damage_scouting.'",
 								`max_frags_battle` = "'.$data->statistics->pvp->max_frags_battle.'",
 								`max_frags_ship_id` = "'.$data->statistics->pvp->max_frags_ship_id.'",
 								`max_planes_killed` = "'.$data->statistics->pvp->max_planes_killed.'",
 								`max_planes_killed_ship_id` = "'.$data->statistics->pvp->max_planes_killed_ship_id.'",
+								`max_scouting_damage_ship_id` = "'.$data->statistics->pvp->max_scouting_damage_ship_id.'",
+								`max_scouting_damage_ship_id` = "'.$data->statistics->pvp->max_scouting_damage_ship_id.'",
+								`max_ships_spotted` = "'.$data->statistics->pvp->max_ships_spotted.'",
+								`max_suppressions_count` = "'.$data->statistics->pvp->max_suppressions_count.'",
+								`max_suppressions_ship_id` = "'.$data->statistics->pvp->max_suppressions_ship_id.'",
+								`max_total_agro` = "'.$data->statistics->pvp->max_total_agro.'",
+								`max_total_agro_ship_id` = "'.$data->statistics->pvp->max_total_agro_ship_id.'",
 								`max_xp` = "'.$data->statistics->pvp->max_xp.'",
 								`max_xp_ship_id` = "'.$data->statistics->pvp->max_xp_ship_id.'",
 								`planes_killed` = "'.$data->statistics->pvp->planes_killed.'",
@@ -207,6 +222,11 @@
 								`second_battery_max_frags_battle` = "'.$data->statistics->pvp->second_battery->max_frags_battle.'",
 								`second_battery_max_frags_ship_id` = "'.$data->statistics->pvp->second_battery->max_frags_ship_id.'",
 								`second_battery_shots` = "'.$data->statistics->pvp->second_battery->shots.'",
+								`ships_spotted` = "'.$data->statistics->pvp->ships_spotted.'",
+								`suppressions_count` = "'.$data->statistics->pvp->suppressions_count.'",
+								`team_capture_points` = "'.$data->statistics->pvp->team_capture_points.'",
+								`team_dropped_capture_points` = "'.$data->statistics->pvp->team_dropped_capture_points.'",
+								`torpedo_agro` = "'.$data->statistics->pvp->torpedo_agro.'",
 								`torpedoes_frags` = "'.$data->statistics->pvp->torpedoes->frags.'",
 								`torpedoes_hits` = "'.$data->statistics->pvp->torpedoes->hits.'",
 								`torpedoes_max_frags_battle` = "'.$data->statistics->pvp->torpedoes->max_frags_battle.'",
@@ -247,7 +267,7 @@
 			
 			### ACHIEVEMENTS ###
 			if (true) {
-				$c=curl_init('http://'.$this->url[$region].'/wows/account/achievements/?application_id='.$this->appid->$region.'&account_id='.$account_id.'&type=all');
+				$c=curl_init('https://'.$this->url[$region].'/wows/account/achievements/?application_id='.$this->appid->$region.'&account_id='.$account_id.'&type=all');
 				curl_setopt($c,CURLOPT_HEADER,false); curl_setopt($c,CURLOPT_RETURNTRANSFER,true);
 				$statuscode = curl_getinfo($c,CURLINFO_HTTP_CODE);
 				$result = json_decode(curl_exec($c)); curl_close($c);
@@ -285,7 +305,7 @@
 			
 			### SHIPS ###
 			if (true) {
-				$c=curl_init('http://'.$this->url[$region].'/wows/ships/stats/?application_id='.$this->appid->$region.'&account_id='.$account_id);
+				$c=curl_init('https://'.$this->url[$region].'/wows/ships/stats/?application_id='.$this->appid->$region.'&in_garage=1&account_id='.$account_id);
 				curl_setopt($c,CURLOPT_HEADER,false); curl_setopt($c,CURLOPT_RETURNTRANSFER,true);
 				$statuscode = curl_getinfo($c,CURLINFO_HTTP_CODE);
 				$result = json_decode(curl_exec($c)); curl_close($c);
@@ -308,21 +328,102 @@
 			
 			### ENCYCLOPEDIA (SHIP)###
 			if (true) {
-				$c=curl_init('http://'.$this->url[$region].'/wows/encyclopedia/ships/?application_id='.$this->appid->$region.'&fields=ship_id%2Cname%2Ctier%2Ctype%2Cnation%2Cimages.small');
+				$c=curl_init('https://'.$this->url[$region].'/wows/encyclopedia/ships/?application_id='.$this->appid->$region.'&language=pl&fields=name%2Ctier%2Ctype%2Cnation%2Cship_id%2Cimages.small&page_no=1');
 				curl_setopt($c,CURLOPT_HEADER,false); curl_setopt($c,CURLOPT_RETURNTRANSFER,true);
 				$statuscode = curl_getinfo($c,CURLINFO_HTTP_CODE);
 				$result = json_decode(curl_exec($c)); curl_close($c);
 				
 				if(isset($result->status) AND isset($result->data)) {
 					
-					#var_dump($result->data);
+					//var_dump($result->data);
 					#$shipname = $result->data->$ship_id->'name;
 					#$ship_id = $result->data->$ship_id;
 					$data = $result->data;
 					$this->sql->query('
 						UPDATE `'.$this->sql->prefix.'encyclopedia` SET
 							
-							`ship` = "'.$this->func->convert_object($data).'"
+							`ships_1` = "'.$this->func->convert_object($data).'"
+							
+							
+							
+							
+							 
+					');
+						
+				} 
+				else $connection = false;
+			}
+			
+			if (true) {
+				$c=curl_init('https://'.$this->url[$region].'/wows/encyclopedia/ships/?application_id='.$this->appid->$region.'&language=pl&fields=name%2Ctier%2Ctype%2Cnation%2Cship_id%2Cimages.small&page_no=2');
+				curl_setopt($c,CURLOPT_HEADER,false); curl_setopt($c,CURLOPT_RETURNTRANSFER,true);
+				$statuscode = curl_getinfo($c,CURLINFO_HTTP_CODE);
+				$result = json_decode(curl_exec($c)); curl_close($c);
+				
+				if(isset($result->status) AND isset($result->data)) {
+					
+					//var_dump($result->data);
+					#$shipname = $result->data->$ship_id->'name;
+					#$ship_id = $result->data->$ship_id;
+					$data = $result->data;
+					$this->sql->query('
+						UPDATE `'.$this->sql->prefix.'encyclopedia` SET
+							
+							`ships_2` = "'.$this->func->convert_object($data).'"
+							
+							
+							
+							
+							 
+					');
+						
+				} 
+				else $connection = false;
+			}
+			
+			if (true) {
+				$c=curl_init('https://'.$this->url[$region].'/wows/encyclopedia/ships/?application_id='.$this->appid->$region.'&language=pl&fields=name%2Ctier%2Ctype%2Cnation%2Cship_id%2Cimages.small&page_no=3');
+				curl_setopt($c,CURLOPT_HEADER,false); curl_setopt($c,CURLOPT_RETURNTRANSFER,true);
+				$statuscode = curl_getinfo($c,CURLINFO_HTTP_CODE);
+				$result = json_decode(curl_exec($c)); curl_close($c);
+				
+				if(isset($result->status) AND isset($result->data)) {
+					
+					//var_dump($result->data);
+					#$shipname = $result->data->$ship_id->'name;
+					#$ship_id = $result->data->$ship_id;
+					$data = $result->data;
+					$this->sql->query('
+						UPDATE `'.$this->sql->prefix.'encyclopedia` SET
+							
+							`ships_3` = "'.$this->func->convert_object($data).'"
+							
+							
+							
+							
+							 
+					');
+						
+				} 
+				else $connection = false;
+			}
+			
+			if (true) {
+				$c=curl_init('https://'.$this->url[$region].'/wows/encyclopedia/ships/?application_id='.$this->appid->$region.'&language=pl&fields=name%2Ctier%2Ctype%2Cnation%2Cship_id%2Cimages.small&page_no=4');
+				curl_setopt($c,CURLOPT_HEADER,false); curl_setopt($c,CURLOPT_RETURNTRANSFER,true);
+				$statuscode = curl_getinfo($c,CURLINFO_HTTP_CODE);
+				$result = json_decode(curl_exec($c)); curl_close($c);
+				
+				if(isset($result->status) AND isset($result->data)) {
+					
+					//var_dump($result->data);
+					#$shipname = $result->data->$ship_id->'name;
+					#$ship_id = $result->data->$ship_id;
+					$data = $result->data;
+					$this->sql->query('
+						UPDATE `'.$this->sql->prefix.'encyclopedia` SET
+							
+							`ships_4` = "'.$this->func->convert_object($data).'"
 							
 							
 							
